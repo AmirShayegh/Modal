@@ -1,0 +1,6 @@
+framework module Modal {
+  umbrella header "Modal-umbrella.h"
+
+  export *
+  module * { export * }
+}

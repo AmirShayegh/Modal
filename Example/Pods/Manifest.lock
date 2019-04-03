@@ -1,0 +1,16 @@
+PODS:
+  - Modal (0.1.0)
+
+DEPENDENCIES:
+  - Modal (from `../`)
+
+EXTERNAL SOURCES:
+  Modal:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Modal: 5ca16c1cc5c81c87e0137f896bf2ba845c76a312
+
+PODFILE CHECKSUM: 671317a991ff7d09703d43b1540b0d80fe7939c1
+
+COCOAPODS: 1.5.3

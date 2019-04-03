@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Modal_Example' do
+  pod 'Modal', :path => '../'
+
+  target 'Modal_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

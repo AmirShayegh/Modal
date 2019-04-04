@@ -1,8 +1,8 @@
 {
   "name": "Modal",
   "version": "0.1.0",
-  "summary": "A short description of Modal.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation.",
+  "description": "Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation. You can provide a fixed size for each modal, or use relative sizing. Compatible with iPhone and iPad apps.",
   "homepage": "https://github.com/amirshayegh/Modal",
   "license": {
     "type": "MIT",
@@ -16,7 +16,18 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "Modal/Classes/**/*"
+  "source_files": "Modal/Classes/**/*.{swift}",
+  "resource_bundles": {
+    "DatePicker": [
+      "Modal/Classes/**/*.{storyboard,xib}"
+    ]
+  },
+  "frameworks": "UIKit",
+  "dependencies": {
+    "Extended": [
+
+    ]
+  }
 }

@@ -20,7 +20,7 @@
   },
   "source_files": "Modal/Classes/**/*.{swift}",
   "resource_bundles": {
-    "DatePicker": [
+    "Modal": [
       "Modal/Classes/**/*.{storyboard,xib}"
     ]
   },

@@ -15,11 +15,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    @IBAction func show(_ sender: Any) {
+        ModalAlert.show(title: "hello", message: "world")
+//        let test: TestModal = TestModal.nib()
+//        test.initialize()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let test: TestModal = TestModal.nib()
-        test.initialize()
+      
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,8 +10,15 @@ import UIKit
 import Modal
 
 class TestModal: ModalView {
+    
+    
+    @IBAction func somethingAction(_ sender: UIButton) {
+        remove()
+    }
+    
     func initialize() {
         self.backgroundColor = UIColor.green
+//        setSmartSizingWith(percentHorizontalPadding: 5, percentVerticalPadding: 10)
         setFixed(width: 200, height: 200)
         present()
     }

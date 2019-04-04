@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Modal'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Modal.'
+  s.summary          = 'Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation. You can provide a fixed size for each modal, or use relative sizing. Compatible with iPhone and iPad apps.
                        DESC
 
   s.homepage         = 'https://github.com/amirshayegh/Modal'
@@ -28,15 +28,16 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/amirshayegh/Modal.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Modal/Classes/**/*'
-  
-  # s.resource_bundles = {
+  s.source_files = 'Modal/Classes/**/*.{swift}'
+
+  s.resource_bundles = {
   #   'Modal' => ['Modal/Assets/*.png']
-  # }
+      'Modal' => ['Modal/Classes/**/*.{storyboard,xib}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  s.dependency 'Extended'
 end

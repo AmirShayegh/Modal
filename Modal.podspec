@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Modal'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation.'
 
 # This description is used to generate tags and improve search results.

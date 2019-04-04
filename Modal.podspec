@@ -39,5 +39,4 @@ Create custom modals for iOS without worrying worrying displaying, positioning, 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  s.dependency 'Extended'
 end

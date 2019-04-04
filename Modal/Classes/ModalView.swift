@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Extended
 import UIKit
 
 class CustomModalConstraintModel {

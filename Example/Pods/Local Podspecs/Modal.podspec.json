@@ -1,6 +1,6 @@
 {
   "name": "Modal",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation.",
   "description": "Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation. You can provide a fixed size for each modal, or use relative sizing. Compatible with iPhone and iPad apps.",
   "homepage": "https://github.com/amirshayegh/Modal",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/amirshayegh/Modal.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "11.0"
@@ -24,10 +24,5 @@
       "Modal/Classes/**/*.{storyboard,xib}"
     ]
   },
-  "frameworks": "UIKit",
-  "dependencies": {
-    "Extended": [
-
-    ]
-  }
+  "frameworks": "UIKit"
 }

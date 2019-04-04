@@ -1,22 +1,15 @@
 PODS:
-  - Extended (1.0.5)
-  - Modal (0.1.0):
-    - Extended
+  - Modal (1.0.0)
 
 DEPENDENCIES:
   - Modal (from `../`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Extended
 
 EXTERNAL SOURCES:
   Modal:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Extended: c463225e0c29b2823847866c1b106827772ac678
-  Modal: a3eedaa43c42c61e2963a560028cecd24bac1a1b
+  Modal: d60d670e1fccb29757ddce4ab30772ed8a2baffa
 
 PODFILE CHECKSUM: 671317a991ff7d09703d43b1540b0d80fe7939c1
 

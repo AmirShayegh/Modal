@@ -300,14 +300,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Modal_Example/Pods-Modal_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Extended/Extended.framework",
 				"${BUILT_PRODUCTS_DIR}/Modal/Modal.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extended.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

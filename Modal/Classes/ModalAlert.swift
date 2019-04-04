@@ -29,7 +29,8 @@ public class ModalAlert {
     }
     
     public static func show(title: String, message: String, yes: @escaping()-> Void, no: @escaping()-> Void) {
-        let view: AlertView = UIView.fromNib(bundle: Bundle(for: AlertView.self))
+        guard let bundle = bundle else {return}
+        let view: AlertView = ModalView.nib(bundle: bundle)
         view.initialize(mode: .YesNo, title: title, message: message, rightButtonCallback: {
             return yes()
         }) {
@@ -39,12 +40,13 @@ public class ModalAlert {
 
     public static func show(title: String, message: String) {
         guard let bundle = bundle else {return}
-        let view: AlertView = UIView.fromNib(bundle: bundle)
+        let view: AlertView = ModalView.nib(bundle: bundle)
         view.initialize(mode: .Message, title: title, message: message, rightButtonCallback: {}) {}
     }
     
     public static func show(title: String, message: String, rightButtonName: String, leftButtonName: String ,rightButtonAction: @escaping()-> Void, leftButtonAction: @escaping()-> Void) {
-        let view: AlertView = UIView.fromNib(bundle: Bundle(for: AlertView.self))
+        guard let bundle = bundle else {return}
+        let view: AlertView = ModalView.nib(bundle: bundle)
         view.initialize(mode: .Custom, title: title, message: message, leftButtonName: leftButtonName, rightButtonName: rightButtonName, rightButtonCallback: {
             return rightButtonAction()
         }) {

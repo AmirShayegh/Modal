@@ -415,7 +415,7 @@ open class ModalView: UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: window.frame.width, height: window.frame.height))
         view.center.y = window.center.y
         view.center.x = window.center.x
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        view.backgroundColor = Modal.screenColor
         view.alpha = visibleAlpha
         view.tag = whiteScreenTag
         return view

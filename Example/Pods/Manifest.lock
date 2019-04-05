@@ -1,5 +1,5 @@
 PODS:
-  - Modal (1.0.0)
+  - Modal (1.0.1)
 
 DEPENDENCIES:
   - Modal (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Modal: d60d670e1fccb29757ddce4ab30772ed8a2baffa
+  Modal: ab2412e5bb9a3b7966338e58b08bca019236ba29
 
 PODFILE CHECKSUM: 671317a991ff7d09703d43b1540b0d80fe7939c1
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.3

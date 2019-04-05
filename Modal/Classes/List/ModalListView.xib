@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModalListView" customModule="Modal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tZB-bf-U7W">
+                    <rect key="frame" x="0.0" y="28" width="375" height="631"/>
+                    <subviews>
+                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7T-TT-40n">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWw-BQ-myd">
+                                    <rect key="frame" x="166.5" y="11" width="42" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVq-do-Ky3">
+                                    <rect key="frame" x="8" y="6" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="EmR-ls-yUT"/>
+                                        <constraint firstAttribute="width" secondItem="HVq-do-Ky3" secondAttribute="height" multiplier="1:1" id="dYH-Jr-KyW"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="cancelAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="WWx-Mb-XKH"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="ncI-6p-F22"/>
+                                <constraint firstItem="RWw-BQ-myd" firstAttribute="centerY" secondItem="K7T-TT-40n" secondAttribute="centerY" id="rIl-oS-cw4"/>
+                                <constraint firstItem="HVq-do-Ky3" firstAttribute="leading" secondItem="K7T-TT-40n" secondAttribute="leading" constant="8" id="srn-ue-1nq"/>
+                                <constraint firstItem="HVq-do-Ky3" firstAttribute="centerY" secondItem="RWw-BQ-myd" secondAttribute="centerY" id="vh1-B4-JWe"/>
+                                <constraint firstItem="RWw-BQ-myd" firstAttribute="centerX" secondItem="K7T-TT-40n" secondAttribute="centerX" id="yTE-z8-Bb2"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuX-Ua-gCL">
+                            <rect key="frame" x="0.0" y="50" width="375" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="ybv-cz-EMn"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D6X-FW-OKN">
+                            <rect key="frame" x="0.0" y="59" width="375" height="572"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="750" constant="581" id="93c-Wx-c3y"/>
+                            </constraints>
+                        </tableView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="D6X-FW-OKN" secondAttribute="trailing" id="HoC-Q3-tfI"/>
+                        <constraint firstItem="D6X-FW-OKN" firstAttribute="leading" secondItem="tZB-bf-U7W" secondAttribute="leading" id="IFE-cZ-6Xg"/>
+                        <constraint firstAttribute="bottom" secondItem="D6X-FW-OKN" secondAttribute="bottom" id="fda-zT-nxP"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tZB-bf-U7W" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="XhQ-Bn-Gma"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tZB-bf-U7W" secondAttribute="trailing" id="Zxm-m3-SNc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tZB-bf-U7W" secondAttribute="bottom" constant="8" id="cRx-Sb-DTl"/>
+                <constraint firstItem="tZB-bf-U7W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="v5a-XJ-k7e"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cancelButton" destination="HVq-do-Ky3" id="FYS-mR-zPA"/>
+                <outlet property="closeButtonHeight" destination="EmR-ls-yUT" id="qfW-Qn-Cg6"/>
+                <outlet property="divider" destination="yuX-Ua-gCL" id="OZe-ao-8Fd"/>
+                <outlet property="tableView" destination="D6X-FW-OKN" id="8E0-lw-m21"/>
+                <outlet property="titleBarHeight" destination="ncI-6p-F22" id="Duz-Eb-r05"/>
+                <outlet property="titleLabel" destination="RWw-BQ-myd" id="mFV-m5-fjc"/>
+            </connections>
+            <point key="canvasLocation" x="98" y="179"/>
+        </view>
+    </objects>
+</document>

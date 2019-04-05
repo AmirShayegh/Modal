@@ -118,7 +118,7 @@ class AlertView: ModalView {
         guard let mode = self.mode else {return}
         addShadow(to: self.layer, opacity: 0.8, height: 2)
         self.layer.cornerRadius = 5
-        self.buttonsContainer.backgroundColor = UIColor(hex: "#EFEFF3").withAlphaComponent(0.8)
+        self.buttonsContainer.backgroundColor = ModalAlert.buttonAccentColor
         self.title.font = titleFont
         self.message.font = messageFont
         if let leftLabel = leftButton.titleLabel, let rightLabel = rightButton.titleLabel {

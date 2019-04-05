@@ -296,21 +296,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Modal_Example/Pods-Modal_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Modal_Example/Pods-Modal_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Modal/Modal.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Modal_Example/Pods-Modal_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modal_Example/Pods-Modal_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ADBA342AD260CB6AD3BFE292 /* [CP] Check Pods Manifest.lock */ = {

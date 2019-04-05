@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Modal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Modal.screenColor = UIColor.purple.withAlphaComponent(0.5)
+        ModalList.optionColor = UIColor.purple
+        ModalList.titleColor = UIColor.purple
         return true
     }
 

@@ -16,6 +16,7 @@ public class ModalAlert {
     public static var buttonFont = UIFont.boldSystemFont(ofSize: 16)
     
     public static var primaryColor = UIColor.black
+    public static var buttonAccentColor = UIColor(hex: "#EFEFF3").withAlphaComponent(0.8)
     
     static var bundle: Bundle? {
         let podBundle = Bundle(for: ModalAlert.self)

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Modal'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Create custom modals for iOS without worrying worrying displaying, positioning, sizing, and screen orientation.'
 
 # This description is used to generate tags and improve search results.
@@ -33,8 +33,7 @@ Create custom modals for iOS without worrying worrying displaying, positioning, 
   s.source_files = 'Modal/Classes/**/*.{swift}'
 
   s.resource_bundles = {
-  #   'Modal' => ['Modal/Assets/*.png']
-      'Modal' => ['Modal/Classes/**/*.{storyboard,xib}']
+      'Modal' => ['Modal/Classes/**/*.{storyboard,xib}', 'Modal/Assets/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

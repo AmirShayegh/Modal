@@ -51,3 +51,26 @@ extension UIColor {
         )
     }
 }
+
+extension UIDeviceOrientation {
+    public func getUIImageOrientationFromDevice() -> UIImage.Orientation {
+        // return CGImagePropertyOrientation based on Device Orientation
+        // This extented function has been determined based on experimentation with how an UIImage gets displayed.
+        switch self {
+        case UIDeviceOrientation.portrait, .faceUp: return UIImage.Orientation.right
+        case UIDeviceOrientation.portraitUpsideDown, .faceDown: return UIImage.Orientation.left
+        case UIDeviceOrientation.landscapeLeft: return UIImage.Orientation.up // this is the base orientation
+        case UIDeviceOrientation.landscapeRight: return UIImage.Orientation.down
+        case UIDeviceOrientation.unknown: return UIImage.Orientation.up
+        }
+    }
+}
+
+extension UIView {
+
+    // Load a nib
+    public class func fromNib<T: UIView>(bundle: Bundle? = Bundle.main) -> T {
+        return bundle!.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+    }
+    
+}

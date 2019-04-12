@@ -10,7 +10,7 @@ import AVFoundation
 
 class PreviewView: UIView {
 
-    var parent: CamViewController?
+    var parent: CameraView?
 
     override class var layerClass: AnyClass {
         return AVCaptureVideoPreviewLayer.self

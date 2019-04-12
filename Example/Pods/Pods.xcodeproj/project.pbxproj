@@ -7,34 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BD255D28E8DC3FAEE4835EFA65D7DBB /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E602FF5BF5E5240154B0BDC0DEBED2 /* AlertView.swift */; };
-		0D9A693526068F8B101C34E25BFF4830 /* PreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 688C49840C38958276C80729067D415C /* PreviewView.xib */; };
-		250E391C2D6FEC6C3DD99D10E24E0C4B /* ModalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9D0DAB7122867348AAC5AF8622712 /* ModalListView.xib */; };
-		28E6DED07D6EBD21F3BBBB6B76A6920B /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6D649072705C8C0E1BC4A9FF7D1817 /* ModalView.swift */; };
-		2F656846EB4FBCD51E400E28D5F21CB5 /* Modal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3259000B392FE94526082C9A067FBAFA /* Modal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36B0B387020F9CF0A0E6444156936D86 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AFDAA668B8FC8BD261FBA9623431F /* PreviewView.swift */; };
+		16C5F9558AAA6CF9D7DBB5BF02762B6A /* ModalCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD58DB54E02377E541326D0105705A /* ModalCamera.swift */; };
+		242F620B30E3EC28AFC9102EBF535B0C /* ModalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF372DAAC3F5162CD3E605123616F2 /* ModalList.swift */; };
+		33E228C7B6E790CFDA702159728352B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
+		36F0924B96F131B47497EFC04CEEEC81 /* ModalAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEE8FE20253B05517A7FBD8EAC75B9 /* ModalAlert.swift */; };
+		3D6EDDC62B48815AE5D2B81C9E232C31 /* Modal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C55C48AA8AA573A6BD30489EB3CF6 /* Modal-dummy.m */; };
+		439BB1408D6DC2490F7F49F247B6FE05 /* Modal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0D722C65F3C0CCE4BCA8123332E2D22 /* Modal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		439C6183A6547ABBB790D5CB06F1B354 /* Pods-Modal_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4334ED22DDA3B71335D38CD9B24F9CC6 /* Pods-Modal_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47FF60810DAF106182FF8201499840FC /* ModalListItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE86D00C7FEF27DCF669669F6DE8C198 /* ModalListItemTableViewCell.xib */; };
-		679F8C93542854A598B53E718FF9B966 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
-		67E2AC08EFF604946DE3EC4D6161CBC2 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6ACAC17CE17A733E7E141AD37215A3F /* CamViewController.swift */; };
-		6991923F79BC834F7026502A35BF5486 /* Modal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE5F2048B5DA1E385165F774F6D38B95 /* Modal.bundle */; };
-		6BDB47375170FB73DAA22C81BF19F301 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DA1844555605C6AFF4B04FC286D32 /* Photo.swift */; };
-		799B4199041A62FDBCBBE983F42F25EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */; };
+		4CEDED8F670758F914DE7B351A445D35 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B592592AE5E613871C51CD204C79D /* ModalView.swift */; };
+		4EB189AEB3C79265A7943CBE3741632E /* CameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19325F1F8DC98FD1D0EBD7211566C785 /* CameraView.xib */; };
+		5582E8DFE57C64001F97ACF6FE095629 /* ModalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB760166427ACD9C8E8D6F577FB0BB /* ModalListView.swift */; };
+		57A7B8D83F9A66F191C6713F3AB115E9 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3C2E4FD45B5AC26AA66DA213FCA93D /* AlertView.xib */; };
+		62D01D4E812ED4AD2BE5C1EDB4387004 /* camera-flip.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D41FB2308A785D26511626067858F45 /* camera-flip.png */; };
+		63BE0CA86867C518A1BDA99A1341E492 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913655DE16F5CE2BC034C4F72B7A9D79 /* Modal.swift */; };
+		6B8EE68AB378B5204EB1410C581821F4 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3A3389DFDD34C221DDCABC69DBA8A8 /* close.png */; };
+		711AC94F3BD4B90129262C33755EBD4C /* PreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F77D14BAA4ED2893584AC124312A85 /* PreviewView.xib */; };
+		7A492A27136239C1EF6961AF92150F69 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3BBF9FA3D043F6E1DDD9616C310F62 /* CamViewController.swift */; };
+		7C338733949542D9C4203E7143A31042 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B4097C2B2FD6D2A4BCBF1018E04D02F /* photo.png */; };
 		7FDD68FA58257218AB80A332AFCF0D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
+		83551D404DD9B6BEE85CD4F8DDD81516 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D807A13D3BF5E986032A9F22F5C7D4F /* PreviewView.swift */; };
 		86A59DBB6F40A340E04EE89127623DAE /* Pods-Modal_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D3F97EAD54A0033813C6C6ACEC996C /* Pods-Modal_Tests-dummy.m */; };
-		958AE3DA5FA8280F4F2E350052E9562A /* ModalAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AD223AC64422AAFF5B4DC2A3859AE1 /* ModalAlert.swift */; };
-		9685D7C3F0FFAF11A0BD5D60253DA6F9 /* ModalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4250FD2825F084C6088A916D7A379 /* ModalListView.swift */; };
-		A34FE5D0141EA7F4254591643A72426A /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D795B83E8B26D17970329BF8ECBE5F8D /* AlertView.xib */; };
+		87A23FAECA8FB65E62164B6F1AC1B219 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661EE2B2E17547142B46AB73E94182C3 /* AlertView.swift */; };
+		8CE0F4DD075A397B7ECE964FCD537AC9 /* Modal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE5F2048B5DA1E385165F774F6D38B95 /* Modal.bundle */; };
+		8E02A30B1DD4E28F13C9F5E666970D5B /* flash-off.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC05C0DBABD95C28B1E464F57F5FB07 /* flash-off.png */; };
+		94711751BC1A71185B33752FC31E59C2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0418AEDD9F260C2748BF9DAAA54C3B /* Extensions.swift */; };
+		96C4DECD89B17DB846C6BBE8ECFBCD0E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28CD7B0857906F2DDF67C1987B5555 /* CameraView.swift */; };
+		A3E4AB08525D8C88FC6A19CB447E730D /* ModalListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3602ABC77908E5EB6522922563BB26 /* ModalListItemTableViewCell.swift */; };
 		ACF4D8296BE2C6B246C496817975F462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
-		AFF972D3F9A7D552D0B932344451FB73 /* ModalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85BF81D85BA05F140F5286E54E50438 /* ModalList.swift */; };
+		ADD7C64E69E5225BCA41858EE6520BD3 /* ModalListItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788DF0A1E4D3F17ABDC37A3F41FE87A3 /* ModalListItemTableViewCell.xib */; };
 		BF7CE64AA0AA4EF8F3EAFE0E454C2711 /* Pods-Modal_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F72A1039F1F18A9861FA28492D87875F /* Pods-Modal_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8663103BC825F82B4BC2D0BF8968C2E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3D591F5E5DADB09794563AB1D600A /* Extensions.swift */; };
-		D42656A104142981D3083CA74BB7C5EC /* ModalListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649102841D55D099ECCE1BF15FBDC362 /* ModalListItemTableViewCell.swift */; };
-		D9AA86778AAC5DDA32BC40A0537A59E6 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4882AE95F68A3965E16D8C30DDC48 /* close.png */; };
+		C155729AFA5885D69383AA09FD864E78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */; };
+		D92BFA3D7FD480D0D58E43F798376F66 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFB7F1AD6068E0356CB313D8581F25 /* Photo.swift */; };
+		DE045C778DCE3B06C963F7BF1A055FAA /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D6E37A48CDBE6404E8B90F4ACD4CE2 /* video.png */; };
 		E5D373FF44C60CED71586FA486BE83FB /* Pods-Modal_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7276F8EE24806E11F5B6B229551AB433 /* Pods-Modal_Example-dummy.m */; };
-		E7C22EF44D7779C2AB61578D6C7F7046 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA429AA92A732E16FAFBA2EC070CAB /* Modal.swift */; };
-		F23F9E93D7885F3A217A4E26D8877D86 /* Cam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B4F49D40DBAD6C621F5B5734D2407 /* Cam.swift */; };
-		FE8F2EA1DD2AD1D70B3DC23ABD97694A /* Modal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD5AF35E4D47A7CB21D9C25FB3A76D /* Modal-dummy.m */; };
+		E5EDD1CA1621B292E207C7E4BBF2BE4E /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 45AF6DEFFC7B85E092EF68ABCC7BCF3F /* flash.png */; };
+		F7700604A95F599473001DB4525877CC /* ModalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5B963452387707A9B9A825951E319E /* ModalListView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +59,7 @@
 			remoteGlobalIDString = 672B68CA7E83E93F13E6976C82E10258;
 			remoteInfo = Modal;
 		};
-		D1551E5C9C6F24310AB60AAE1DB78750 /* PBXContainerItemProxy */ = {
+		D4E3E8DB9ED662020697BF43BA750CD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -64,67 +71,65 @@
 /* Begin PBXFileReference section */
 		0F20509300E21B8D16609CBA0E04F036 /* Pods_Modal_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Modal_Example.framework; path = "Pods-Modal_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		112E155E448B06C33DB7AC2F1BEF4901 /* Pods-Modal_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Modal_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		13B63840080C938A1C2495ADFD0F27E8 /* Modal.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Modal.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		18CF8705420D4D3A7CBA23EF00215361 /* Pods-Modal_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Modal_Tests.modulemap"; sourceTree = "<group>"; };
-		208DA1844555605C6AFF4B04FC286D32 /* Photo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		223AFDAA668B8FC8BD261FBA9623431F /* PreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
-		2BBD5AF35E4D47A7CB21D9C25FB3A76D /* Modal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Modal-dummy.m"; sourceTree = "<group>"; };
-		3259000B392FE94526082C9A067FBAFA /* Modal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Modal-umbrella.h"; sourceTree = "<group>"; };
-		37B4250FD2825F084C6088A916D7A379 /* ModalListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalListView.swift; sourceTree = "<group>"; };
+		19325F1F8DC98FD1D0EBD7211566C785 /* CameraView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = CameraView.xib; sourceTree = "<group>"; };
+		1B0418AEDD9F260C2748BF9DAAA54C3B /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Modal/Classes/Extensions.swift; sourceTree = "<group>"; };
+		20D6E37A48CDBE6404E8B90F4ACD4CE2 /* video.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
+		23CF372DAAC3F5162CD3E605123616F2 /* ModalList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalList.swift; sourceTree = "<group>"; };
+		2D807A13D3BF5E986032A9F22F5C7D4F /* PreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		2F02C173961B7914ED0C4B043F836CB9 /* ResourceBundle-Modal-Modal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Modal-Modal-Info.plist"; sourceTree = "<group>"; };
+		368FCBF453D1D50E5E70E3BB57D6A9E6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		38AF620581EBF6E4688B731335F4354D /* Modal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Modal-Info.plist"; sourceTree = "<group>"; };
 		392A1DDDABB453DD249CBFEA786B59C9 /* Pods-Modal_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Modal_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3C21106AD42435EB5CA17899D53E121A /* Modal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Modal-Info.plist"; sourceTree = "<group>"; };
 		40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		40F77D14BAA4ED2893584AC124312A85 /* PreviewView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = PreviewView.xib; sourceTree = "<group>"; };
 		4334ED22DDA3B71335D38CD9B24F9CC6 /* Pods-Modal_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Modal_Example-umbrella.h"; sourceTree = "<group>"; };
-		44C0238E7A56B129F742740D153EE8B1 /* ResourceBundle-Modal-Modal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Modal-Modal-Info.plist"; sourceTree = "<group>"; };
+		45AF6DEFFC7B85E092EF68ABCC7BCF3F /* flash.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
 		475AF39E5F424C896293ACE2068D17BE /* Pods-Modal_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Modal_Tests-Info.plist"; sourceTree = "<group>"; };
-		542ACB4B0EA082BCD8E7224EA9494318 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		5FA3D591F5E5DADB09794563AB1D600A /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Modal/Classes/Extensions.swift; sourceTree = "<group>"; };
+		4A3C2E4FD45B5AC26AA66DA213FCA93D /* AlertView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		4DE42B804CEB5C5A728FDE7F844C75D8 /* Modal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Modal.modulemap; sourceTree = "<group>"; };
+		4DF362C98D5D7E14B7B3E20FB403AE80 /* Modal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Modal.xcconfig; sourceTree = "<group>"; };
 		5FE994EAEE3ABE356429D929DA2506D7 /* Pods-Modal_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Modal_Example.modulemap"; sourceTree = "<group>"; };
-		649102841D55D099ECCE1BF15FBDC362 /* ModalListItemTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalListItemTableViewCell.swift; sourceTree = "<group>"; };
-		688C49840C38958276C80729067D415C /* PreviewView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = PreviewView.xib; sourceTree = "<group>"; };
-		6BF4882AE95F68A3965E16D8C30DDC48 /* close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		639C55C48AA8AA573A6BD30489EB3CF6 /* Modal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Modal-dummy.m"; sourceTree = "<group>"; };
+		661EE2B2E17547142B46AB73E94182C3 /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		6E6A4F0FA67AA71CD1EA26C8F5E48917 /* Pods-Modal_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Modal_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		6E6D649072705C8C0E1BC4A9FF7D1817 /* ModalView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalView.swift; path = Modal/Classes/ModalView.swift; sourceTree = "<group>"; };
 		7276F8EE24806E11F5B6B229551AB433 /* Pods-Modal_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Modal_Example-dummy.m"; sourceTree = "<group>"; };
-		747B4F49D40DBAD6C621F5B5734D2407 /* Cam.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cam.swift; sourceTree = "<group>"; };
-		7BF82F2E64C6603F44D8A71CB83BD0D1 /* Modal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Modal.xcconfig; sourceTree = "<group>"; };
-		83D2F106427D911CE3CB3180D50FCCBD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		788DF0A1E4D3F17ABDC37A3F41FE87A3 /* ModalListItemTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ModalListItemTableViewCell.xib; sourceTree = "<group>"; };
+		842B592592AE5E613871C51CD204C79D /* ModalView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalView.swift; path = Modal/Classes/ModalView.swift; sourceTree = "<group>"; };
+		8D41FB2308A785D26511626067858F45 /* camera-flip.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "camera-flip.png"; sourceTree = "<group>"; };
 		8DCF56A4D6BB4B8673F5A66D00E9F641 /* Modal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Modal.framework; path = Modal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		913655DE16F5CE2BC034C4F72B7A9D79 /* Modal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Modal.swift; path = Modal/Classes/Modal.swift; sourceTree = "<group>"; };
+		9B4097C2B2FD6D2A4BCBF1018E04D02F /* photo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		9CEFB7F1AD6068E0356CB313D8581F25 /* Photo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9D3BBF9FA3D043F6E1DDD9616C310F62 /* CamViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DA9D0DAB7122867348AAC5AF8622712 /* ModalListView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ModalListView.xib; sourceTree = "<group>"; };
-		9DDA429AA92A732E16FAFBA2EC070CAB /* Modal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Modal.swift; path = Modal/Classes/Modal.swift; sourceTree = "<group>"; };
 		A0F4BCAE2EAD6DFBFD7BEB52CEE3294E /* Pods-Modal_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Modal_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A18EFF1E3ED978FED865E6B62EAF9BAF /* Modal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Modal-prefix.pch"; sourceTree = "<group>"; };
+		A8AD58DB54E02377E541326D0105705A /* ModalCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalCamera.swift; sourceTree = "<group>"; };
+		AAEB760166427ACD9C8E8D6F577FB0BB /* ModalListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalListView.swift; sourceTree = "<group>"; };
+		ABDEE8FE20253B05517A7FBD8EAC75B9 /* ModalAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalAlert.swift; sourceTree = "<group>"; };
+		AC3602ABC77908E5EB6522922563BB26 /* ModalListItemTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalListItemTableViewCell.swift; sourceTree = "<group>"; };
+		AD3A3389DFDD34C221DDCABC69DBA8A8 /* close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		AE5F2048B5DA1E385165F774F6D38B95 /* Modal.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Modal.bundle; path = "Modal-Modal.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6C8F63A212BD58D64A5A4C3B162B60 /* Pods-Modal_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Modal_Example.release.xcconfig"; sourceTree = "<group>"; };
-		AE86D00C7FEF27DCF669669F6DE8C198 /* ModalListItemTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ModalListItemTableViewCell.xib; sourceTree = "<group>"; };
 		B5993891D9D566E0471809F126510583 /* Pods-Modal_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Modal_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B85BF81D85BA05F140F5286E54E50438 /* ModalList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalList.swift; sourceTree = "<group>"; };
-		BFFF74DE4D2008913F3B89305BBE7D9E /* Modal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Modal-prefix.pch"; sourceTree = "<group>"; };
+		C14BE5BAB79CB0E0A5FB23AC91E02E93 /* Modal.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Modal.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C6578E431F5BA9288497EF2F944F4010 /* Pods-Modal_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Modal_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C92F0E252E3E9A299F1AA7AC171CB3EC /* Pods_Modal_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Modal_Tests.framework; path = "Pods-Modal_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB28CD7B0857906F2DDF67C1987B5555 /* CameraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		CB43CE6F4B2986D09788E26C13D355C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CD5B963452387707A9B9A825951E319E /* ModalListView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ModalListView.xib; sourceTree = "<group>"; };
+		CFC05C0DBABD95C28B1E464F57F5FB07 /* flash-off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "flash-off.png"; sourceTree = "<group>"; };
 		D6D3F97EAD54A0033813C6C6ACEC996C /* Pods-Modal_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Modal_Tests-dummy.m"; sourceTree = "<group>"; };
-		D795B83E8B26D17970329BF8ECBE5F8D /* AlertView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		DAD711315712E00E9087D9B876E9F62A /* Pods-Modal_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Modal_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DF12734A3FFC86412F58632BC7C60683 /* Pods-Modal_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Modal_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E0AD223AC64422AAFF5B4DC2A3859AE1 /* ModalAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalAlert.swift; sourceTree = "<group>"; };
 		E5A0982713D4A7385002EE37712D2743 /* Pods-Modal_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Modal_Example-Info.plist"; sourceTree = "<group>"; };
 		ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		F1E602FF5BF5E5240154B0BDC0DEBED2 /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		F6ACAC17CE17A733E7E141AD37215A3F /* CamViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
+		F0D722C65F3C0CCE4BCA8123332E2D22 /* Modal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Modal-umbrella.h"; sourceTree = "<group>"; };
 		F72A1039F1F18A9861FA28492D87875F /* Pods-Modal_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Modal_Tests-umbrella.h"; sourceTree = "<group>"; };
-		FCBDD272EEEAB6C3166F8EB83FD1ACAB /* Modal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Modal.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		08B84309BA817D3B5EF84C1D7D1ED59E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				679F8C93542854A598B53E718FF9B966 /* Foundation.framework in Frameworks */,
-				799B4199041A62FDBCBBE983F42F25EE /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		35545CB5224EF7A9C22CAF68BA7A9F01 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,38 +146,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75035B560C2707C56D50B78BF6CE6C5D /* Frameworks */ = {
+		B1EEDDC20B4F7B7DD0CA206CDEB7517C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA301290AE5BE8839E9235FA8A2B543C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33E228C7B6E790CFDA702159728352B5 /* Foundation.framework in Frameworks */,
+				C155729AFA5885D69383AA09FD864E78 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00BE63BBA6365BA66FE1D59806B7BA90 /* Support Files */ = {
+		0441EB1321CB56C7E29247F98FD72A09 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FCBDD272EEEAB6C3166F8EB83FD1ACAB /* Modal.modulemap */,
-				7BF82F2E64C6603F44D8A71CB83BD0D1 /* Modal.xcconfig */,
-				2BBD5AF35E4D47A7CB21D9C25FB3A76D /* Modal-dummy.m */,
-				3C21106AD42435EB5CA17899D53E121A /* Modal-Info.plist */,
-				BFFF74DE4D2008913F3B89305BBE7D9E /* Modal-prefix.pch */,
-				3259000B392FE94526082C9A067FBAFA /* Modal-umbrella.h */,
-				44C0238E7A56B129F742740D153EE8B1 /* ResourceBundle-Modal-Modal-Info.plist */,
+				F6139D39049A40D4AEC932C0FDD88A29 /* Alert */,
+				7720D3B3EDA81FDA101515310A9C4FEE /* Camera */,
+				0A8D1D5797D0D699A0B7F96ACFAEB051 /* List */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Modal";
+			name = Classes;
+			path = Modal/Classes;
 			sourceTree = "<group>";
 		};
-		0D6B7862E07D3C90267D353B9E8880C8 /* Camera */ = {
+		0A8D1D5797D0D699A0B7F96ACFAEB051 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				688C49840C38958276C80729067D415C /* PreviewView.xib */,
+				788DF0A1E4D3F17ABDC37A3F41FE87A3 /* ModalListItemTableViewCell.xib */,
+				CD5B963452387707A9B9A825951E319E /* ModalListView.xib */,
 			);
-			name = Camera;
-			path = Camera;
+			name = List;
+			path = List;
 			sourceTree = "<group>";
 		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
@@ -183,71 +194,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		24AA657AE22472088F33B8789A6EE6FD /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				F1E602FF5BF5E5240154B0BDC0DEBED2 /* AlertView.swift */,
-				E0AD223AC64422AAFF5B4DC2A3859AE1 /* ModalAlert.swift */,
-			);
-			name = Alert;
-			path = Modal/Classes/Alert;
-			sourceTree = "<group>";
-		};
-		2DC35CB9564A31751BB94336519861B2 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				B85BF81D85BA05F140F5286E54E50438 /* ModalList.swift */,
-				649102841D55D099ECCE1BF15FBDC362 /* ModalListItemTableViewCell.swift */,
-				37B4250FD2825F084C6088A916D7A379 /* ModalListView.swift */,
-			);
-			name = List;
-			path = Modal/Classes/List;
-			sourceTree = "<group>";
-		};
 		342D3513B14FADB9612D853D6B900009 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5E8D35D8E2D134F97D0B3CF8F4BC50FB /* Modal */,
+				820774DF1BFA3B511F40D268219BFD48 /* Modal */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		3A942AEF2EC325AF556E1EB81CD77028 /* Classes */ = {
+		3F7088B552CC4D52E7C76F110D148C1C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				F040BC0191C66B82FF8507F515D19C4E /* Alert */,
-				0D6B7862E07D3C90267D353B9E8880C8 /* Camera */,
-				4AF918877AF9FCAA3C772907AD3E95FE /* List */,
+				8D41FB2308A785D26511626067858F45 /* camera-flip.png */,
+				AD3A3389DFDD34C221DDCABC69DBA8A8 /* close.png */,
+				45AF6DEFFC7B85E092EF68ABCC7BCF3F /* flash.png */,
+				CFC05C0DBABD95C28B1E464F57F5FB07 /* flash-off.png */,
+				9B4097C2B2FD6D2A4BCBF1018E04D02F /* photo.png */,
+				20D6E37A48CDBE6404E8B90F4ACD4CE2 /* video.png */,
 			);
-			name = Classes;
-			path = Modal/Classes;
+			name = Assets;
+			path = Modal/Assets;
 			sourceTree = "<group>";
 		};
-		4AF918877AF9FCAA3C772907AD3E95FE /* List */ = {
+		6669A2F93C1BE345784D2F07DA2580AF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				AE86D00C7FEF27DCF669669F6DE8C198 /* ModalListItemTableViewCell.xib */,
-				9DA9D0DAB7122867348AAC5AF8622712 /* ModalListView.xib */,
+				368FCBF453D1D50E5E70E3BB57D6A9E6 /* LICENSE */,
+				C14BE5BAB79CB0E0A5FB23AC91E02E93 /* Modal.podspec */,
+				CB43CE6F4B2986D09788E26C13D355C3 /* README.md */,
 			);
-			name = List;
-			path = List;
-			sourceTree = "<group>";
-		};
-		5E8D35D8E2D134F97D0B3CF8F4BC50FB /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				5FA3D591F5E5DADB09794563AB1D600A /* Extensions.swift */,
-				9DDA429AA92A732E16FAFBA2EC070CAB /* Modal.swift */,
-				6E6D649072705C8C0E1BC4A9FF7D1817 /* ModalView.swift */,
-				24AA657AE22472088F33B8789A6EE6FD /* Alert */,
-				E06A67952A5A28071A048BDB75EE34E4 /* Camera */,
-				2DC35CB9564A31751BB94336519861B2 /* List */,
-				7B2458699AB0BBDB24C3584585B55571 /* Pod */,
-				861523522F70D782EB0F4532D60CF1B9 /* Resources */,
-				00BE63BBA6365BA66FE1D59806B7BA90 /* Support Files */,
-			);
-			name = Modal;
-			path = ../..;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		68AA17A54AFCC664177F856DF506F2DC /* Targets Support Files */ = {
@@ -259,23 +235,42 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7B2458699AB0BBDB24C3584585B55571 /* Pod */ = {
+		74CDCFB747423F486BBB3E48FD9B47AF /* List */ = {
 			isa = PBXGroup;
 			children = (
-				83D2F106427D911CE3CB3180D50FCCBD /* LICENSE */,
-				13B63840080C938A1C2495ADFD0F27E8 /* Modal.podspec */,
-				542ACB4B0EA082BCD8E7224EA9494318 /* README.md */,
+				23CF372DAAC3F5162CD3E605123616F2 /* ModalList.swift */,
+				AC3602ABC77908E5EB6522922563BB26 /* ModalListItemTableViewCell.swift */,
+				AAEB760166427ACD9C8E8D6F577FB0BB /* ModalListView.swift */,
 			);
-			name = Pod;
+			name = List;
+			path = Modal/Classes/List;
 			sourceTree = "<group>";
 		};
-		861523522F70D782EB0F4532D60CF1B9 /* Resources */ = {
+		7720D3B3EDA81FDA101515310A9C4FEE /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				D32207811834691E0B5E2725A4470DDB /* Assets */,
-				3A942AEF2EC325AF556E1EB81CD77028 /* Classes */,
+				19325F1F8DC98FD1D0EBD7211566C785 /* CameraView.xib */,
+				40F77D14BAA4ED2893584AC124312A85 /* PreviewView.xib */,
 			);
-			name = Resources;
+			name = Camera;
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		820774DF1BFA3B511F40D268219BFD48 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				1B0418AEDD9F260C2748BF9DAAA54C3B /* Extensions.swift */,
+				913655DE16F5CE2BC034C4F72B7A9D79 /* Modal.swift */,
+				842B592592AE5E613871C51CD204C79D /* ModalView.swift */,
+				F5474F9A22E5D8A9311FB977C0FC3C5C /* Alert */,
+				B9A32451654FE75616E7C4E54AC99676 /* Camera */,
+				74CDCFB747423F486BBB3E48FD9B47AF /* List */,
+				6669A2F93C1BE345784D2F07DA2580AF /* Pod */,
+				C6023F6CA3FD8EA1603FD45C12909B51 /* Resources */,
+				EB30D45C63E14C1BA137365E474E7E00 /* Support Files */,
+			);
+			name = Modal;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		B91B4F3FBB2DBADE2493AF74ABC8D52C /* Pods-Modal_Example */ = {
@@ -295,6 +290,19 @@
 			path = "Target Support Files/Pods-Modal_Example";
 			sourceTree = "<group>";
 		};
+		B9A32451654FE75616E7C4E54AC99676 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				CB28CD7B0857906F2DDF67C1987B5555 /* CameraView.swift */,
+				9D3BBF9FA3D043F6E1DDD9616C310F62 /* CamViewController.swift */,
+				A8AD58DB54E02377E541326D0105705A /* ModalCamera.swift */,
+				9CEFB7F1AD6068E0356CB313D8581F25 /* Photo.swift */,
+				2D807A13D3BF5E986032A9F22F5C7D4F /* PreviewView.swift */,
+			);
+			name = Camera;
+			path = Modal/Classes/Camera;
+			sourceTree = "<group>";
+		};
 		C275FD3ABBEEE2D834747FDED7DB97C4 /* Pods-Modal_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +319,15 @@
 			path = "Target Support Files/Pods-Modal_Tests";
 			sourceTree = "<group>";
 		};
+		C6023F6CA3FD8EA1603FD45C12909B51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F7088B552CC4D52E7C76F110D148C1C /* Assets */,
+				0441EB1321CB56C7E29247F98FD72A09 /* Classes */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -322,27 +339,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		D32207811834691E0B5E2725A4470DDB /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				6BF4882AE95F68A3965E16D8C30DDC48 /* close.png */,
-			);
-			name = Assets;
-			path = Modal/Assets;
-			sourceTree = "<group>";
-		};
-		E06A67952A5A28071A048BDB75EE34E4 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				747B4F49D40DBAD6C621F5B5734D2407 /* Cam.swift */,
-				F6ACAC17CE17A733E7E141AD37215A3F /* CamViewController.swift */,
-				208DA1844555605C6AFF4B04FC286D32 /* Photo.swift */,
-				223AFDAA668B8FC8BD261FBA9623431F /* PreviewView.swift */,
-			);
-			name = Camera;
-			path = Modal/Classes/Camera;
-			sourceTree = "<group>";
-		};
 		E169A450ED27AC725DF52953F66D11E0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,10 +348,35 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		F040BC0191C66B82FF8507F515D19C4E /* Alert */ = {
+		EB30D45C63E14C1BA137365E474E7E00 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D795B83E8B26D17970329BF8ECBE5F8D /* AlertView.xib */,
+				4DE42B804CEB5C5A728FDE7F844C75D8 /* Modal.modulemap */,
+				4DF362C98D5D7E14B7B3E20FB403AE80 /* Modal.xcconfig */,
+				639C55C48AA8AA573A6BD30489EB3CF6 /* Modal-dummy.m */,
+				38AF620581EBF6E4688B731335F4354D /* Modal-Info.plist */,
+				A18EFF1E3ED978FED865E6B62EAF9BAF /* Modal-prefix.pch */,
+				F0D722C65F3C0CCE4BCA8123332E2D22 /* Modal-umbrella.h */,
+				2F02C173961B7914ED0C4B043F836CB9 /* ResourceBundle-Modal-Modal-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Modal";
+			sourceTree = "<group>";
+		};
+		F5474F9A22E5D8A9311FB977C0FC3C5C /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				661EE2B2E17547142B46AB73E94182C3 /* AlertView.swift */,
+				ABDEE8FE20253B05517A7FBD8EAC75B9 /* ModalAlert.swift */,
+			);
+			name = Alert;
+			path = Modal/Classes/Alert;
+			sourceTree = "<group>";
+		};
+		F6139D39049A40D4AEC932C0FDD88A29 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				4A3C2E4FD45B5AC26AA66DA213FCA93D /* AlertView.xib */,
 			);
 			name = Alert;
 			path = Alert;
@@ -375,6 +396,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		206BEAD3F36F08FA4E4A9869A59FF337 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439BB1408D6DC2490F7F49F247B6FE05 /* Modal-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A531BD1FBFA6A6BADF86E7F4A0365177 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,14 +417,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF7CE64AA0AA4EF8F3EAFE0E454C2711 /* Pods-Modal_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4BB3E35B3B4565CB7AC98DE4C19C43A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F656846EB4FBCD51E400E28D5F21CB5 /* Modal-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,17 +463,17 @@
 		};
 		672B68CA7E83E93F13E6976C82E10258 /* Modal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD341B6D2946DB931B460573C084F3D5 /* Build configuration list for PBXNativeTarget "Modal" */;
+			buildConfigurationList = 3E88B31A0F7005E580B59C2BF197156D /* Build configuration list for PBXNativeTarget "Modal" */;
 			buildPhases = (
-				F4BB3E35B3B4565CB7AC98DE4C19C43A /* Headers */,
-				255763193255FE0EEBAB7A259B055435 /* Sources */,
-				08B84309BA817D3B5EF84C1D7D1ED59E /* Frameworks */,
-				93CCE5DE59019F4F5265989025EC13F1 /* Resources */,
+				206BEAD3F36F08FA4E4A9869A59FF337 /* Headers */,
+				11C78742518002F18F6107861021FB19 /* Sources */,
+				EA301290AE5BE8839E9235FA8A2B543C /* Frameworks */,
+				AD4CBD38C55355F7DC76BE7AAF10A2EC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B29A6A55DF13F600B940714B677460BF /* PBXTargetDependency */,
+				17D475F504B40691246D4F3F6FC7A7AB /* PBXTargetDependency */,
 			);
 			name = Modal;
 			productName = Modal;
@@ -461,11 +482,11 @@
 		};
 		B84E2BD688FC6ECFADEA2028349E1C46 /* Modal-Modal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2833F2DEB1D0824993F1A5F0A72ABD76 /* Build configuration list for PBXNativeTarget "Modal-Modal" */;
+			buildConfigurationList = 2D2187D0A33386358DC538D8935D8365 /* Build configuration list for PBXNativeTarget "Modal-Modal" */;
 			buildPhases = (
-				E320E58068F7660E3563FDDE8D3EC3DD /* Sources */,
-				75035B560C2707C56D50B78BF6CE6C5D /* Frameworks */,
-				674FA5562F07C9B4636267128D6A4E93 /* Resources */,
+				55DF30F786D117C7A331488F9114ABA7 /* Sources */,
+				B1EEDDC20B4F7B7DD0CA206CDEB7517C /* Frameworks */,
+				955BFD77E508E62558C2063FDAED8F81 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -506,18 +527,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		674FA5562F07C9B4636267128D6A4E93 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A34FE5D0141EA7F4254591643A72426A /* AlertView.xib in Resources */,
-				D9AA86778AAC5DDA32BC40A0537A59E6 /* close.png in Resources */,
-				47FF60810DAF106182FF8201499840FC /* ModalListItemTableViewCell.xib in Resources */,
-				250E391C2D6FEC6C3DD99D10E24E0C4B /* ModalListView.xib in Resources */,
-				0D9A693526068F8B101C34E25BFF4830 /* PreviewView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		90477A20DB9BF28212701F77E4AE96A5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,11 +534,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93CCE5DE59019F4F5265989025EC13F1 /* Resources */ = {
+		955BFD77E508E62558C2063FDAED8F81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6991923F79BC834F7026502A35BF5486 /* Modal.bundle in Resources */,
+				57A7B8D83F9A66F191C6713F3AB115E9 /* AlertView.xib in Resources */,
+				62D01D4E812ED4AD2BE5C1EDB4387004 /* camera-flip.png in Resources */,
+				4EB189AEB3C79265A7943CBE3741632E /* CameraView.xib in Resources */,
+				6B8EE68AB378B5204EB1410C581821F4 /* close.png in Resources */,
+				8E02A30B1DD4E28F13C9F5E666970D5B /* flash-off.png in Resources */,
+				E5EDD1CA1621B292E207C7E4BBF2BE4E /* flash.png in Resources */,
+				ADD7C64E69E5225BCA41858EE6520BD3 /* ModalListItemTableViewCell.xib in Resources */,
+				F7700604A95F599473001DB4525877CC /* ModalListView.xib in Resources */,
+				7C338733949542D9C4203E7143A31042 /* photo.png in Resources */,
+				711AC94F3BD4B90129262C33755EBD4C /* PreviewView.xib in Resources */,
+				DE045C778DCE3B06C963F7BF1A055FAA /* video.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD4CBD38C55355F7DC76BE7AAF10A2EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE0F4DD075A397B7ECE964FCD537AC9 /* Modal.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,23 +570,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		255763193255FE0EEBAB7A259B055435 /* Sources */ = {
+		11C78742518002F18F6107861021FB19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BD255D28E8DC3FAEE4835EFA65D7DBB /* AlertView.swift in Sources */,
-				F23F9E93D7885F3A217A4E26D8877D86 /* Cam.swift in Sources */,
-				67E2AC08EFF604946DE3EC4D6161CBC2 /* CamViewController.swift in Sources */,
-				C8663103BC825F82B4BC2D0BF8968C2E /* Extensions.swift in Sources */,
-				FE8F2EA1DD2AD1D70B3DC23ABD97694A /* Modal-dummy.m in Sources */,
-				E7C22EF44D7779C2AB61578D6C7F7046 /* Modal.swift in Sources */,
-				958AE3DA5FA8280F4F2E350052E9562A /* ModalAlert.swift in Sources */,
-				AFF972D3F9A7D552D0B932344451FB73 /* ModalList.swift in Sources */,
-				D42656A104142981D3083CA74BB7C5EC /* ModalListItemTableViewCell.swift in Sources */,
-				9685D7C3F0FFAF11A0BD5D60253DA6F9 /* ModalListView.swift in Sources */,
-				28E6DED07D6EBD21F3BBBB6B76A6920B /* ModalView.swift in Sources */,
-				6BDB47375170FB73DAA22C81BF19F301 /* Photo.swift in Sources */,
-				36B0B387020F9CF0A0E6444156936D86 /* PreviewView.swift in Sources */,
+				87A23FAECA8FB65E62164B6F1AC1B219 /* AlertView.swift in Sources */,
+				96C4DECD89B17DB846C6BBE8ECFBCD0E /* CameraView.swift in Sources */,
+				7A492A27136239C1EF6961AF92150F69 /* CamViewController.swift in Sources */,
+				94711751BC1A71185B33752FC31E59C2 /* Extensions.swift in Sources */,
+				3D6EDDC62B48815AE5D2B81C9E232C31 /* Modal-dummy.m in Sources */,
+				63BE0CA86867C518A1BDA99A1341E492 /* Modal.swift in Sources */,
+				36F0924B96F131B47497EFC04CEEEC81 /* ModalAlert.swift in Sources */,
+				16C5F9558AAA6CF9D7DBB5BF02762B6A /* ModalCamera.swift in Sources */,
+				242F620B30E3EC28AFC9102EBF535B0C /* ModalList.swift in Sources */,
+				A3E4AB08525D8C88FC6A19CB447E730D /* ModalListItemTableViewCell.swift in Sources */,
+				5582E8DFE57C64001F97ACF6FE095629 /* ModalListView.swift in Sources */,
+				4CEDED8F670758F914DE7B351A445D35 /* ModalView.swift in Sources */,
+				D92BFA3D7FD480D0D58E43F798376F66 /* Photo.swift in Sources */,
+				83551D404DD9B6BEE85CD4F8DDD81516 /* PreviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55DF30F786D117C7A331488F9114ABA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,27 +614,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E320E58068F7660E3563FDDE8D3EC3DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		17D475F504B40691246D4F3F6FC7A7AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Modal-Modal";
+			target = B84E2BD688FC6ECFADEA2028349E1C46 /* Modal-Modal */;
+			targetProxy = D4E3E8DB9ED662020697BF43BA750CD3 /* PBXContainerItemProxy */;
+		};
 		882C4731802BA78A5940F9B431CED060 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Modal;
 			target = 672B68CA7E83E93F13E6976C82E10258 /* Modal */;
 			targetProxy = 8D878ACF520D2648E9B340DD2CF28CA8 /* PBXContainerItemProxy */;
-		};
-		B29A6A55DF13F600B940714B677460BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Modal-Modal";
-			target = B84E2BD688FC6ECFADEA2028349E1C46 /* Modal-Modal */;
-			targetProxy = D1551E5C9C6F24310AB60AAE1DB78750 /* PBXContainerItemProxy */;
 		};
 		DBBC3A80B8FFD2645A601FFD788F6C6A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -610,9 +638,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		000E11C9A818B91EB7794EF369F86EEF /* Release */ = {
+		1062A9132CD45E510D07C80DC31EDE61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BF82F2E64C6603F44D8A71CB83BD0D1 /* Modal.xcconfig */;
+			baseConfigurationReference = 4DF362C98D5D7E14B7B3E20FB403AE80 /* Modal.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -638,9 +666,24 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		21EDFE280970854ED8789DB2524ED201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DF362C98D5D7E14B7B3E20FB403AE80 /* Modal.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Modal";
+				INFOPLIST_FILE = "Target Support Files/Modal/ResourceBundle-Modal-Modal-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = Modal;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -704,35 +747,37 @@
 			};
 			name = Release;
 		};
-		5E1DF235C0BF3DA88B7E85A00F1AFA97 /* Debug */ = {
+		501D349677CDF715D2B9D8840D408EB6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BF82F2E64C6603F44D8A71CB83BD0D1 /* Modal.xcconfig */;
+			baseConfigurationReference = 4DF362C98D5D7E14B7B3E20FB403AE80 /* Modal.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Modal";
-				INFOPLIST_FILE = "Target Support Files/Modal/ResourceBundle-Modal-Modal-Info.plist";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Modal/Modal-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Modal/Modal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Modal/Modal.modulemap";
+				PRODUCT_MODULE_NAME = Modal;
 				PRODUCT_NAME = Modal;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		6B365F06BCA7D2D87732A04146811C9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BF82F2E64C6603F44D8A71CB83BD0D1 /* Modal.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Modal";
-				INFOPLIST_FILE = "Target Support Files/Modal/ResourceBundle-Modal-Modal-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = Modal;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -906,36 +951,19 @@
 			};
 			name = Release;
 		};
-		DCF92CC07D52A3ABABE2C0D43F3F4F96 /* Debug */ = {
+		DEE10C8EB60CB44BB80212FB8F26283A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BF82F2E64C6603F44D8A71CB83BD0D1 /* Modal.xcconfig */;
+			baseConfigurationReference = 4DF362C98D5D7E14B7B3E20FB403AE80 /* Modal.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Modal/Modal-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Modal/Modal-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Modal";
+				INFOPLIST_FILE = "Target Support Files/Modal/ResourceBundle-Modal-Modal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Modal/Modal.modulemap";
-				PRODUCT_MODULE_NAME = Modal;
 				PRODUCT_NAME = Modal;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -987,11 +1015,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2833F2DEB1D0824993F1A5F0A72ABD76 /* Build configuration list for PBXNativeTarget "Modal-Modal" */ = {
+		2D2187D0A33386358DC538D8935D8365 /* Build configuration list for PBXNativeTarget "Modal-Modal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E1DF235C0BF3DA88B7E85A00F1AFA97 /* Debug */,
-				6B365F06BCA7D2D87732A04146811C9F /* Release */,
+				DEE10C8EB60CB44BB80212FB8F26283A /* Debug */,
+				21EDFE280970854ED8789DB2524ED201 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E88B31A0F7005E580B59C2BF197156D /* Build configuration list for PBXNativeTarget "Modal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1062A9132CD45E510D07C80DC31EDE61 /* Debug */,
+				501D349677CDF715D2B9D8840D408EB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1010,15 +1047,6 @@
 			buildConfigurations = (
 				77DCF1B6A6033C06EC2DD74EE43B1413 /* Debug */,
 				F68B11D6883F1420F1182B331A514723 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BD341B6D2946DB931B460573C084F3D5 /* Build configuration list for PBXNativeTarget "Modal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DCF92CC07D52A3ABABE2C0D43F3F4F96 /* Debug */,
-				000E11C9A818B91EB7794EF369F86EEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

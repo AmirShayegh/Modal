@@ -15,17 +15,41 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBAction func show(_ sender: Any) {
-        // Alert
-//        ModalAlert.show(title: "hello", message: "world")
-        // Custom modal
-//        let test: TestModal = TestModal.nib()
-//        test.initialize()
-        // List
+    
+    @IBAction func list(_ sender: Any) {
         ModalList.show(title: "hello", options: ["One","Two","Three","Four","Five"], cancelCallback: {
-            ModalAlert.show(title: "You.....", message: "Cancelled")
+            ModalAlert.show(title: ":(", message: "You Cancelled")
         }) { (selected) in
-            ModalAlert.show(title: "You selected", message: selected)
+            ModalAlert.show(title: "Selected", message: selected)
+        }
+    }
+    
+    @IBAction func camera(_ sender: Any) {
+        ModalCamera.show(result: { (result) -> Void? in
+            print(result)
+        })
+    }
+    
+    @IBAction func alert(_ sender: Any) {
+        func thanksForInput(liked: Bool) {
+            var message = "Glad you like it"
+            if !liked {
+                message = "its just your opinion"
+            }
+            ModalAlert.show(title: "I see..", message: message)
+        }
+        ModalAlert.show(title: "Hello World", message: "How do you feel about this?", rightButtonName: "Awesome!", leftButtonName: "Sucks", rightButtonAction: {
+            ModalAlert.show(title: "Sweet", message: "Do you think this is useful?", yes: {
+                thanksForInput(liked: true)
+            }, no: {
+                thanksForInput(liked: false)
+            })
+        }) {
+            ModalAlert.show(title: "sorry to hear that", message: "Do you think this is useful?", yes: {
+                thanksForInput(liked: true)
+            }, no: {
+                thanksForInput(liked: false)
+            })
         }
     }
     

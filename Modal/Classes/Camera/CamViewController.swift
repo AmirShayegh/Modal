@@ -1,4 +1,4 @@
-import UIKit
+/*import UIKit
 import AVFoundation
 //import Extended
 //import Designer
@@ -196,7 +196,7 @@ public class CamViewController: UIViewController {
     func setPreviewView() {
         self.view.layoutIfNeeded()
         guard let parent = self.parent, let parentView = parent.view else {return}
-        let preview: PreviewView = UIView.fromNib(bundle: Cam.bundle)
+        let preview: PreviewView = UIView.fromNib(bundle: ModalCamera.bundle)
         preview.videoPreviewLayer.session = self.captureSession
         preview.position(in: cameraContainere, behind: captureButton)
         self.videoPreviewLayer = preview
@@ -536,7 +536,7 @@ public class CamViewController: UIViewController {
     }
     
     func setIconsForCapture() {
-        if let cancel = UIImage(named: "cancel", in: Cam.bundle, compatibleWith: nil) {
+        if let cancel = UIImage(named: "cancel", in: ModalCamera.bundle, compatibleWith: nil) {
             self.closeButton.setTitle("", for: .normal)
             self.closeButton.setImage(cancel, for: .normal)
             if let buttonImage = closeButton.imageView {
@@ -554,7 +554,7 @@ public class CamViewController: UIViewController {
     }
     
     func setIconsForPreview() {
-        if let garbage = UIImage(named: "garbage", in: Cam.bundle, compatibleWith: nil) {
+        if let garbage = UIImage(named: "garbage", in: ModalCamera.bundle, compatibleWith: nil) {
             self.closeButton.setTitle("", for: .normal)
             self.closeButton.setImage(garbage, for: .normal)
             if let buttonImage = closeButton.imageView {
@@ -678,5 +678,5 @@ extension CamViewController: CLLocationManagerDelegate {
         self.currentHeading = newHeading
     }
 }
-
+*/
 

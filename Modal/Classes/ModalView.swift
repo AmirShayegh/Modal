@@ -441,4 +441,16 @@ open class ModalView: UIView {
         }
         recursivelyRemoveWhiteScreens(attempt: found)
     }
+    
+    func calc(percent: CGFloat, of: CGFloat)-> CGFloat {
+        return ((of * percent) / 100)
+    }
+    
+    func addShadow(to layer: CALayer, opacity: Float, height: Int, radius: CGFloat? = 10) {
+        layer.borderColor = UIColor(red:0.14, green:0.25, blue:0.46, alpha:0.2).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: height)
+        layer.shadowColor = UIColor(red:0.14, green:0.25, blue:0.46, alpha:0.2).cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = 10
+    }
 }

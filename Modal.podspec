@@ -33,9 +33,10 @@ Create custom modals for iOS without worrying worrying displaying, positioning, 
   s.source_files = 'Modal/Classes/**/*.{swift}'
 
   s.resource_bundles = {
-      'Modal' => ['Modal/Classes/**/*.{storyboard,xib}', 'Modal/Assets/*.png']
+      'Modal' => ['Modal/Classes/**/*.{storyboard,xib}', 'Modal/Assets/*.png', 'Modal/Assets/*.json']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
+  s.dependency 'lottie-ios'
 end

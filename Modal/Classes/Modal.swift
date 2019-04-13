@@ -9,6 +9,7 @@ import Foundation
 
 
 public class Modal {
+    public static var dividerHeight: CGFloat = 1
     public static var titleBarHeight: CGFloat = 42
     
     // MARK: Colours
@@ -20,7 +21,7 @@ public class Modal {
     public static var closeButtonColor = UIColor.lightGray
     
     // TODO: better handling of colour set up,
-    public static var secondaryColor = UIColor.lightGray
+    public static var secondaryColor = UIColor.black
     
     // MARK: Fonts
     public static var titleFont = UIFont.boldSystemFont(ofSize: 18)

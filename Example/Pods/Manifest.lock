@@ -1,15 +1,22 @@
 PODS:
-  - Modal (1.0.1)
+  - lottie-ios (3.0.3)
+  - Modal (1.0.1):
+    - lottie-ios
 
 DEPENDENCIES:
   - Modal (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - lottie-ios
 
 EXTERNAL SOURCES:
   Modal:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Modal: ab2412e5bb9a3b7966338e58b08bca019236ba29
+  lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
+  Modal: a9b5e167d9004b4cac85a9b0b99f6ebd4dda9ba2
 
 PODFILE CHECKSUM: 671317a991ff7d09703d43b1540b0d80fe7939c1
 

@@ -30,8 +30,8 @@ class PreviewView: UIView {
         self.centerXAnchor.constraint(equalTo: cameraContainer.centerXAnchor)
         self.centerYAnchor.constraint(equalTo: cameraContainer.centerYAnchor)
         self.translatesAutoresizingMaskIntoConstraints = false
-        cameraContainer.addSubview(self)
-        //        cameraContainer.insertSubview(self, belowSubview: behind)
+//        cameraContainer.addSubview(self)
+        cameraContainer.insertSubview(self, belowSubview: behind)
 
         // Add constraints
         self.translatesAutoresizingMaskIntoConstraints = false

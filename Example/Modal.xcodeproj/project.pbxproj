@@ -299,10 +299,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Modal_Example/Pods-Modal_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Modal/Modal.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

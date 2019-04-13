@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import CoreLocation
+import Lottie
 
 enum CameraMode {
     case Video
@@ -25,7 +26,9 @@ class CameraView: ModalView {
     // MARK: Constants
     private let notification = UINotificationFeedbackGenerator()
     private let context = CIContext()
-    
+    private let lottieCaptureIconTag = Int.random(in: 1000..<1000000)
+    private let lottieCaptureIconName = "circle"
+    private let imagePreviewTag = Int.random(in: 1000..<1000000)
     // MARK: Variables
     private var locationManager: CLLocationManager = CLLocationManager()
     
@@ -46,6 +49,8 @@ class CameraView: ModalView {
     private var locationONSnap: CLLocation?
     private var headingONSnap: CLHeading?
     
+    private var isCapturing = false
+    
     var flashEnabled: Bool = false
     var hasFlash: Bool = false
     var cameraPosition: AVCaptureDevice.Position = .back
@@ -64,15 +69,19 @@ class CameraView: ModalView {
     // MARK: Outlets
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var divider: UIView!
+    @IBOutlet weak var dividerHeight: NSLayoutConstraint!
+    @IBOutlet weak var dividerBottomPadding: NSLayoutConstraint!
     
     @IBOutlet weak var titleBarHeight: NSLayoutConstraint!
     @IBOutlet weak var closeButtonHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var captureButtonContainer: UIView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var cameraPositionButton: UIButton!
     @IBOutlet weak var cameraModeButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
+    
+    @IBOutlet weak var resultImageView: UIImageView!
     
     @IBAction func closeAction(_ sender: UIButton) {
         teardown()
@@ -104,7 +113,9 @@ class CameraView: ModalView {
         self.setFlashIcon()
     }
     
-    @IBAction func captureAction(_ sender: UIButton) {
+    @objc func captureAction(_ sender:UITapGestureRecognizer){
+        if isCapturing {return}
+        playCaptureAnimation()
         captureImage()
     }
     
@@ -116,27 +127,39 @@ class CameraView: ModalView {
         present()
         style()
         setup(for: initialPosition)
+        initializeCaptureButton()
+        resultImageView.alpha = 0
 //        initLocation()
+    }
+    
+    func initializeCaptureButton() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(captureAction(_:)))
+        captureButtonContainer.addGestureRecognizer(gesture)
     }
     
     // MARK: Sizing
     func getFrame(for size: CGSize) -> CGRect {
         self.layoutIfNeeded()
+        let addedTopBarHeight = Modal.dividerHeight + Modal.titleBarHeight
         if size.width > size.height {
             //landscape
             let basicHeight = size.height - displayPadding
             let width = (basicHeight * 4) / 3
-            return CGRect(x: 0, y: 0, width: width, height: basicHeight)
+            let addedTopBarHeight = Modal.dividerHeight + Modal.titleBarHeight
+            return CGRect(x: 0, y: 0, width: width, height: basicHeight + addedTopBarHeight)
         } else {
             //portrait
             let width =  size.width - displayPadding
             let height = (width * 4) / 3
-            return CGRect(x: 0, y: 0, width: width, height: height)
+            return CGRect(x: 0, y: 0, width: width, height: height + addedTopBarHeight)
         }
     }
     
     // MARK: Camera Setup
     func setup(for position: AVCaptureDevice.Position) {
+        self.resultImageView.image = nil
+        self.resultImageView.alpha = 0
+        self.previewView.alpha = 1
         checkPermission()
         DispatchQueue.main.async { [unowned self] in
             self.captureSession.beginConfiguration()
@@ -237,7 +260,7 @@ class CameraView: ModalView {
          self.layoutIfNeeded()
         let preview: PreviewView = UIView.fromNib(bundle: ModalCamera.bundle)
         preview.videoPreviewLayer.session = self.captureSession
-        preview.position(in: previewView, behind: captureButton)
+        preview.position(in: previewView, behind: captureButtonContainer)
         self.videoPreviewLayer = preview
         setVideoOrientation(for: self.frame.size)
 //        self.addSubview(captureButton)
@@ -292,7 +315,7 @@ class CameraView: ModalView {
         
         // add a screenshot while waiting to process photo
         //        addTempImageSnap()
-        self.captureButton.isEnabled = false
+        self.isCapturing = true
         self.imageOrientation = getVideoOrientation(size: self.frame.size)
         let settings = setPhotoSettings()
         self.deviceOrientationOnCapture = UIDevice.current.orientation
@@ -328,6 +351,47 @@ class CameraView: ModalView {
         divider.backgroundColor = Modal.dividerColor
         self.titleBarHeight.constant = Modal.titleBarHeight
         self.closeButtonHeight.constant = calc(percent: 70, of:  Modal.titleBarHeight)
+        self.dividerHeight.constant = Modal.dividerHeight
+        addButtomShadow(to: divider, color: Modal.dividerColor.cgColor, opacity: 0.9)
+        addLottieCaptureIcon()
+    }
+    
+    func addLottieCaptureIcon() {
+        let animationView = AnimationView()
+        guard let bundle = Modal.bundle, let animation: Animation = Animation.named(lottieCaptureIconName, bundle: bundle) else {
+            return
+        }
+        animationView.animation = animation
+        animationView.tag = self.lottieCaptureIconTag
+        
+        // Position Icon
+        animationView.frame = self.captureButtonContainer.frame
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        captureButtonContainer.addSubview(animationView)
+        // Add constraints
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            animationView.widthAnchor.constraint(equalToConstant: captureButtonContainer.frame.width),
+            animationView.heightAnchor.constraint(equalToConstant: captureButtonContainer.frame.height),
+            animationView.centerXAnchor.constraint(equalTo: captureButtonContainer.centerXAnchor),
+            animationView.centerYAnchor.constraint(equalTo: captureButtonContainer.centerYAnchor),
+            ])
+        self.layoutIfNeeded()
+        self.captureButtonContainer.layoutIfNeeded()
+    }
+    
+    func playCaptureAnimation() {
+        if let icon = captureButtonContainer.viewWithTag(lottieCaptureIconTag) as? AnimationView  {
+            icon.loopMode = .loop
+            icon.play()
+        }
+    }
+    
+    func stopCaptureAnimation() {
+        if let icon = captureButtonContainer.viewWithTag(lottieCaptureIconTag) as? AnimationView  {
+            icon.loopMode = .playOnce
+        }
     }
     
     func setIcons() {
@@ -338,9 +402,9 @@ class CameraView: ModalView {
     }
     
     func setFlashIcon() {
-        var iconName = "flash"
+        var iconName = "flash-off"
         if flashEnabled {
-            iconName = "flash-off"
+            iconName = "flash"
         }
         setIcon(for: flashButton, iconName: iconName, tint: Modal.secondaryColor, alt: iconName)
     }
@@ -374,8 +438,9 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
     public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         print("taken")
         self.taken = photo
-//        showPreview(of: photo)
-        self.captureButton.isEnabled = true
+        showPreview(of: photo)
+        self.isCapturing = false
+        self.stopCaptureAnimation()
     }
     
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -400,6 +465,42 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
         let ciImage = CIImage(cvPixelBuffer: imageBuffer)
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
         return UIImage(cgImage: cgImage)
+    }
+    
+    func convert(photo: AVCapturePhoto?) -> Photo? {
+        guard let photo = photo, let cgImageRepresentation = photo.cgImageRepresentation(), let orientationOnCapture = deviceOrientationOnCapture else {
+            return nil
+        }
+        
+        let cgImage = cgImageRepresentation.takeUnretainedValue()
+        
+        guard let copy = cgImage.copy() else {
+            return nil
+        }
+        
+        let img = UIImage(cgImage: copy, scale: 1.0, orientation: orientationOnCapture.getUIImageOrientationFromDevice())
+        
+        let processed = Photo(image: img, timeStamp: photo.timestamp, location: locationONSnap, heading: headingONSnap, metadata: photo.metadata)
+        
+        return processed
+    }
+    
+    func showPreview(of avCapturePhoto: AVCapturePhoto) {
+        guard let photo = convert(photo: avCapturePhoto), let image = photo.image, let videoPreview = videoPreviewLayer else {return}
+        resultImageView.contentMode = .scaleAspectFit
+        resultImageView.image = image
+        self.captureSession.stopRunning()
+        videoPreview.removeFromSuperview()
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.resultImageView.alpha = 1
+            self.previewView.alpha = 0
+//            self.setIconsForPreview()
+            self.layoutIfNeeded()
+        }) { (done) in
+//            self.addSubview(self.captureButton)
+//            self.addSubview(self.closeButton)
+        }
     }
 }
 

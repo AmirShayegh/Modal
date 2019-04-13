@@ -22,8 +22,14 @@
   "resource_bundles": {
     "Modal": [
       "Modal/Classes/**/*.{storyboard,xib}",
-      "Modal/Assets/*.png"
+      "Modal/Assets/*.png",
+      "Modal/Assets/*.json"
     ]
   },
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "dependencies": {
+    "lottie-ios": [
+
+    ]
+  }
 }

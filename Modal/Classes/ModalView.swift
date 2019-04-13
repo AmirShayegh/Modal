@@ -52,7 +52,7 @@ open class ModalView: UIView {
     private let fieldErrorAnimationDuration = 2.0
     
     // White screen
-    private let whiteScreenTag: Int = Int.random(in: 1000..<100000)
+    private let whiteScreenTag: Int = Int.random(in: 1000..<1000000)
     private let whiteScreenAlpha: CGFloat = 0.9
     
     // MARK: Class funcs
@@ -452,5 +452,21 @@ open class ModalView: UIView {
         layer.shadowColor = UIColor(red:0.14, green:0.25, blue:0.46, alpha:0.2).cgColor
         layer.shadowOpacity = opacity
         layer.shadowRadius = 10
+    }
+    
+    func addButtomShadow(to view: UIView, color: CGColor = UIColor(red:0.14, green:0.25, blue:0.46, alpha:0.2).cgColor, height: CGFloat = 2, opacity: Float = 0.8) {
+        let shadowPath = UIBezierPath()
+        shadowPath.move(to: CGPoint(x: 0, y: view.bounds.height))
+        shadowPath.addLine(to: CGPoint(x: view.bounds.width, y: view.bounds.height))
+        shadowPath.addLine(to: CGPoint(x: view.bounds.width, y: view.bounds.height + height))
+        shadowPath.addLine(to: CGPoint(x: 0, y: view.bounds.height + height))
+        shadowPath.close()
+        
+        view.layer.shadowColor = color
+        view.layer.shadowOpacity = opacity
+        view.layer.masksToBounds = false
+        view.layer.shadowRadius = 10
+        view.layer.shadowOffset = CGSize(width: 0, height: height)
+        view.layer.shadowPath = shadowPath.cgPath
     }
 }

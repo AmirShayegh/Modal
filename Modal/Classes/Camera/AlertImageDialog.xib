@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AlertImageDialog" customModule="Modal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2s-al-52x">
+                    <rect key="frame" x="0.0" y="20" width="375" height="596"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvF-KZ-HDs">
+                    <rect key="frame" x="0.0" y="616" width="375" height="43"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="46p-Pl-Feo">
+                            <rect key="frame" x="0.0" y="2" width="375" height="41"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqM-nP-nxv">
+                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="41"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="retryAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="FYG-nH-3w5"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm5-KO-ARF">
+                                    <rect key="frame" x="188.5" y="0.0" width="186.5" height="41"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="approveAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="lJK-qS-J4s"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="46p-Pl-Feo" secondAttribute="bottom" id="8Mp-fH-i4M"/>
+                        <constraint firstItem="46p-Pl-Feo" firstAttribute="top" secondItem="vvF-KZ-HDs" secondAttribute="top" constant="2" id="mDG-eP-YuY"/>
+                        <constraint firstItem="46p-Pl-Feo" firstAttribute="leading" secondItem="vvF-KZ-HDs" secondAttribute="leading" id="mVD-oI-iPr"/>
+                        <constraint firstAttribute="height" constant="43" id="nKB-G4-Ix0"/>
+                        <constraint firstAttribute="trailing" secondItem="46p-Pl-Feo" secondAttribute="trailing" id="vBM-L8-7e1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="X2s-al-52x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1Ya-CJ-Xgd"/>
+                <constraint firstItem="vvF-KZ-HDs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4y5-NB-dnb"/>
+                <constraint firstItem="X2s-al-52x" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="MES-R8-vsJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="X2s-al-52x" secondAttribute="trailing" id="MpO-kN-JZi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vvF-KZ-HDs" secondAttribute="bottom" constant="8" id="bsF-bQ-PcU"/>
+                <constraint firstItem="vvF-KZ-HDs" firstAttribute="top" secondItem="X2s-al-52x" secondAttribute="bottom" id="qbg-cF-jdR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vvF-KZ-HDs" secondAttribute="trailing" id="rld-BZ-Oqy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="approveButton" destination="lm5-KO-ARF" id="2pZ-nn-LBL"/>
+                <outlet property="buttonContainerHeight" destination="nKB-G4-Ix0" id="0UE-za-vDb"/>
+                <outlet property="buttonsContainer" destination="vvF-KZ-HDs" id="yzC-8x-VN2"/>
+                <outlet property="imageView" destination="X2s-al-52x" id="ERj-ZY-gM5"/>
+                <outlet property="retryButton" destination="OqM-nP-nxv" id="oTe-DR-TZ5"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -25,9 +25,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func camera(_ sender: Any) {
-        ModalCamera.show(result: { (result) -> Void? in
-            print(result)
-        })
+        ModalCamera.show { (result) in
+            if let photo = result, let image = photo.image {
+                ModalAlert.show(title: "You picked this", image: image, yes: {
+                    ModalAlert.show(title: "Looks like", message: "You liked it")
+                }, no: {
+                     ModalAlert.show(title: "Looks like", message: "You didnt liked it")
+                })
+            } else {
+                ModalAlert.show(title: "Nothing Selected", message: "What the title said.")
+            }
+        }
     }
     
     @IBAction func alert(_ sender: Any) {

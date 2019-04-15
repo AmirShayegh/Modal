@@ -83,14 +83,6 @@ class CameraView: ModalView {
     
     @IBOutlet weak var resultImageView: UIImageView!
     
-    @IBAction func closeAction(_ sender: UIButton) {
-        teardown()
-        remove()
-        if let callback = callBack {
-            return callback(nil)
-        }
-    }
-    
     @IBAction func changeCameraMode(_ sender: Any) {
         
     }
@@ -113,14 +105,34 @@ class CameraView: ModalView {
         self.setFlashIcon()
     }
     
-    @objc func captureAction(_ sender:UITapGestureRecognizer){
+    @objc func captureAction(_ sender:UITapGestureRecognizer) {
         if isCapturing {return}
+        notification.notificationOccurred(.success)
         playCaptureAnimation()
         captureImage()
     }
     
+    @IBAction func closeAction(_ sender: UIButton) {
+        notification.notificationOccurred(.error)
+        teardown()
+        remove()
+        if let callback = callBack {
+            return callback(nil)
+        }
+    }
+    
+    // MARK: Result
+    func sendCallback(with photo: Photo) {
+        notification.notificationOccurred(.success)
+        teardown()
+        remove()
+        if let callback = self.callBack {
+            return callback(photo)
+        }
+    }
+    
     // MARK: Entry Point
-    func initialize(initialPosition: AVCaptureDevice.Position = .back, result: @escaping(_ photo: Photo?) -> Void?) {
+    func initialize(initialPosition: AVCaptureDevice.Position = .back, result: @escaping(_ photo: Photo?) -> Void) {
         guard let window = UIApplication.shared.keyWindow else {return}
         let suggestedSize = getFrame(for: window.frame.size)
         setFixed(width: suggestedSize.width, height: suggestedSize.height)
@@ -129,6 +141,7 @@ class CameraView: ModalView {
         setup(for: initialPosition)
         initializeCaptureButton()
         resultImageView.alpha = 0
+        self.callBack = result
 //        initLocation()
     }
     
@@ -263,9 +276,6 @@ class CameraView: ModalView {
         preview.position(in: previewView, behind: captureButtonContainer)
         self.videoPreviewLayer = preview
         setVideoOrientation(for: self.frame.size)
-//        self.addSubview(captureButton)
-//        self.addSubview(closeButton)
-//        styleContainer(layer: preview)
         preview.clipsToBounds = true
         addPreviewConstraints(to: preview)
     }
@@ -444,21 +454,13 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
     }
     
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        //        print("Caught a frame")
         guard let uiImage = imageFromSampleBuffer(sampleBuffer: sampleBuffer) else { return }
         DispatchQueue.main.async { [unowned self] in
-            self.delegate?.captured(image: uiImage)
+            if let delegate = self.delegate {
+                delegate.captured(image: uiImage)
+            }
         }
     }
-    
-    //    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-    //        guard let uiImage = imageFromSampleBuffer(sampleBuffer: sampleBuffer) else { return }
-    //        DispatchQueue.main.async { [unowned self] in
-    //            if self.delegate != nil {
-    //                self.delegate?.captured(image: uiImage)
-    //            }
-    //        }
-    //    }
     
     private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
@@ -485,22 +487,54 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
         return processed
     }
     
-    func showPreview(of avCapturePhoto: AVCapturePhoto) {
-        guard let photo = convert(photo: avCapturePhoto), let image = photo.image, let videoPreview = videoPreviewLayer else {return}
-        resultImageView.contentMode = .scaleAspectFit
-        resultImageView.image = image
-        self.captureSession.stopRunning()
-        videoPreview.removeFromSuperview()
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.resultImageView.alpha = 1
+    func increaseViewHeightForAlertImageDialog() {
+        guard let heightConstraint = self.contraintsAdded[.Height] else {return}
+        UIView.animate(withDuration: 0.1, animations: {
             self.previewView.alpha = 0
-//            self.setIconsForPreview()
             self.layoutIfNeeded()
         }) { (done) in
-//            self.addSubview(self.captureButton)
-//            self.addSubview(self.closeButton)
+            UIView.animate(withDuration: 0.3) {
+                heightConstraint.constant = heightConstraint.constant + AlertImageDialog.buttonBarHeight
+                self.previewView.alpha = 1
+                self.layoutIfNeeded()
+            }
         }
+        
+    }
+    
+    func decreaseViewHeightAfterAlerImageDialog() {
+        guard let heightConstraint = self.contraintsAdded[.Height] else {return}
+        UIView.animate(withDuration: 0.1, animations: {
+            self.previewView.alpha = 0
+            self.layoutIfNeeded()
+        }) { (done) in
+            UIView.animate(withDuration: 0.4) {
+                heightConstraint.constant = heightConstraint.constant - AlertImageDialog.buttonBarHeight
+                self.previewView.alpha = 1
+                self.layoutIfNeeded()
+            }
+        }
+
+    }
+    
+    func showPreview(of avCapturePhoto: AVCapturePhoto) {
+        guard let photo = convert(photo: avCapturePhoto), let image = photo.image else {return}
+        prepareforPreview()
+        ModalCamera.showPreviewDialog(with: image, in: previewView, approved: {
+            self.sendCallback(with: photo)
+        }) {
+            self.notification.notificationOccurred(.warning)
+            self.decreaseViewHeightAfterAlerImageDialog()
+            self.setup(for: .back)
+        }
+    }
+    
+    func prepareforPreview() {
+        guard let videoPreview = videoPreviewLayer else {return}
+        resultImageView.contentMode = .scaleAspectFit
+        self.captureSession.stopRunning()
+        videoPreview.removeFromSuperview()
+        increaseViewHeightForAlertImageDialog()
     }
 }
 

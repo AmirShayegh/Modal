@@ -28,10 +28,34 @@ public class ModalCamera {
         return nil
     }
     
-    public static func show(result: @escaping(_ photo: Photo?) -> Void?) {
+    static var alertImageDialogBundle: Bundle? {
+        let podBundle = Bundle(for: AlertImageDialog.self)
+        
+        if let bundleURL = podBundle.url(forResource: "Modal", withExtension: "bundle"), let b = Bundle(url: bundleURL) {
+            return b
+        } else {
+            print("Fatal Error: Could not find bundle for ModalAlert")
+        }
+        return nil
+    }
+    
+    public static func show(result: @escaping(_ photo: Photo?) -> Void) {
         guard let bundle = bundle else {return}
         let view: CameraView = ModalView.nib(bundle: bundle)
         view.initialize(result: result)
+    }
+    
+    public static func showPreviewDialog(with image: UIImage,in container: UIView, approved: @escaping()-> Void, rejected: @escaping()-> Void) {
+        guard let bundle = alertImageDialogBundle else {return}
+        let view: AlertImageDialog = AlertImageDialog.fromNib(bundle: bundle)
+        view.initialize(with: image, in: container) { (approve) in
+            view.removeFromSuperview()
+            if approve {
+                return approved()
+            } else {
+                return rejected()
+            }
+        }
     }
 
     // Picker view controller

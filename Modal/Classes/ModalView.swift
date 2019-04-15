@@ -37,7 +37,7 @@ open class ModalView: UIView {
 
     private var contraintsAddedd: [CustomModalConstraintModel] = [CustomModalConstraintModel]()
     // MARK: Variables
-    private var contraintsAdded: [customModalContraint: NSLayoutConstraint] = [customModalContraint: NSLayoutConstraint]()
+    var contraintsAdded: [customModalContraint: NSLayoutConstraint] = [customModalContraint: NSLayoutConstraint]()
     
     // Space between bottom of modal and keyboard, when keyboard covers modal
     private let keyboardPadding: CGFloat = 25

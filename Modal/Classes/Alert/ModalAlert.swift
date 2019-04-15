@@ -45,13 +45,21 @@ public class ModalAlert {
         view.initialize(mode: .Message, title: title, message: message, rightButtonCallback: {}) {}
     }
     
-    public static func show(title: String, message: String, rightButtonName: String, leftButtonName: String ,rightButtonAction: @escaping()-> Void, leftButtonAction: @escaping()-> Void) {
+    public static func show(title: String, message: String, rightButtonName: String, leftButtonName: String, rightButtonAction: @escaping()-> Void, leftButtonAction: @escaping()-> Void) {
         guard let bundle = bundle else {return}
         let view: AlertView = ModalView.nib(bundle: bundle)
-        view.initialize(mode: .Custom, title: title, message: message, leftButtonName: leftButtonName, rightButtonName: rightButtonName, rightButtonCallback: {
-            return rightButtonAction()
-        }) {
-            return leftButtonAction()
-        }
+        view.initialize(mode: .Custom, title: title, message: message, rightButtonCallback: rightButtonAction, leftButtonCallBack: leftButtonAction)
+    }
+    
+    public static func show(title: String, image: UIImage, rightButtonName: String, leftButtonName: String, rightButtonCallback: @escaping()-> Void, leftButtonCallBack: @escaping()-> Void) {
+        guard let bundle = bundle else {return}
+        let view: AlertImageView = AlertImageView.nib(bundle: bundle)
+        view.initialize(title: title, image: image, leftButtonName: leftButtonName, rightButtonName: rightButtonName, rightButtonCallback: rightButtonCallback, leftButtonCallBack: leftButtonCallBack)
+    }
+    
+    public static func show(title: String, image: UIImage, yes: @escaping()-> Void, no: @escaping()-> Void) {
+        guard let bundle = bundle else {return}
+        let view: AlertImageView = AlertImageView.nib(bundle: bundle)
+        view.initialize(title: title, image: image, rightButtonCallback: yes, leftButtonCallBack: no)
     }
 }

@@ -138,7 +138,6 @@ class AlertView: ModalView {
             self.leftButton.setTitle(customLeftButtonName, for: .normal)
             self.rightButton.setTitle(customRightButtonName, for: .normal)
         }
-
     }
 
 }

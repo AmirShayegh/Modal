@@ -16,9 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yQ3-Q6-gM2">
-                    <rect key="frame" x="0.0" y="63" width="414" height="673"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrU-fr-dhd">
                     <rect key="frame" x="0.0" y="63" width="414" height="673"/>
                     <subviews>
@@ -111,19 +108,16 @@
                 <constraint firstItem="bAG-10-ZND" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2pq-Kj-KAK"/>
                 <constraint firstAttribute="trailing" secondItem="wrV-dR-yK2" secondAttribute="trailing" id="5z4-Xf-Ikx"/>
                 <constraint firstItem="wrU-fr-dhd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7Mh-hg-6ZV"/>
-                <constraint firstItem="yQ3-Q6-gM2" firstAttribute="top" secondItem="wrU-fr-dhd" secondAttribute="top" id="8qj-oi-SVZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bAG-10-ZND" secondAttribute="trailing" id="A1f-tc-80b"/>
                 <constraint firstItem="wrV-dR-yK2" firstAttribute="top" secondItem="bAG-10-ZND" secondAttribute="bottom" id="FER-Ix-1vi"/>
                 <constraint firstItem="wrV-dR-yK2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J2D-gl-fuT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wrU-fr-dhd" secondAttribute="trailing" id="K6q-ss-0ud"/>
-                <constraint firstItem="yQ3-Q6-gM2" firstAttribute="trailing" secondItem="wrU-fr-dhd" secondAttribute="trailing" id="PYL-q9-TIB"/>
-                <constraint firstItem="yQ3-Q6-gM2" firstAttribute="bottom" secondItem="wrU-fr-dhd" secondAttribute="bottom" id="TzV-Nc-x4b"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wrU-fr-dhd" secondAttribute="bottom" id="YZm-Un-GLL"/>
                 <constraint firstItem="bAG-10-ZND" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bdP-Lc-CkD"/>
-                <constraint firstItem="yQ3-Q6-gM2" firstAttribute="leading" secondItem="wrU-fr-dhd" secondAttribute="leading" id="yun-GT-lhw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="cameraButtonsStack" destination="bHH-ff-fbU" id="W1S-C8-tLI"/>
                 <outlet property="cameraModeButton" destination="R6B-fZ-WBN" id="ALH-st-En6"/>
                 <outlet property="cameraPositionButton" destination="hwM-e8-XAe" id="F14-Zp-9YA"/>
                 <outlet property="cancelButton" destination="axG-Rn-W6T" id="6a4-12-s2Y"/>
@@ -134,7 +128,6 @@
                 <outlet property="dividerHeight" destination="EqC-L9-gKT" id="x7q-DE-t7E"/>
                 <outlet property="flashButton" destination="Fnf-CB-pR8" id="rh5-97-1av"/>
                 <outlet property="previewView" destination="wrU-fr-dhd" id="1tV-xQ-lMO"/>
-                <outlet property="resultImageView" destination="yQ3-Q6-gM2" id="a2b-LV-njX"/>
                 <outlet property="titleBarHeight" destination="Phh-n9-YG6" id="t2m-7m-oik"/>
             </connections>
             <point key="canvasLocation" x="95.652173913043484" y="59.510869565217398"/>

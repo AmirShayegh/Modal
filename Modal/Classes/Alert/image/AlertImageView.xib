@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="426-TN-vTv">
-                    <rect key="frame" x="0.0" y="819" width="414" height="43"/>
+                    <rect key="frame" x="0.0" y="811" width="414" height="43"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lHO-lV-gvf">
                             <rect key="frame" x="0.0" y="2" width="414" height="41"/>
@@ -58,19 +58,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOt-pH-AcY">
-                    <rect key="frame" x="0.0" y="96" width="414" height="723"/>
+                    <rect key="frame" x="0.0" y="96" width="414" height="699"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vqs-iJ-NM5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Fdr-fs-B0m"/>
                 <constraint firstItem="vqs-iJ-NM5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Tl0-OT-kY0"/>
-                <constraint firstItem="426-TN-vTv" firstAttribute="top" secondItem="lOt-pH-AcY" secondAttribute="bottom" id="cMn-ew-Vq9"/>
+                <constraint firstItem="426-TN-vTv" firstAttribute="top" secondItem="lOt-pH-AcY" secondAttribute="bottom" constant="16" id="cMn-ew-Vq9"/>
                 <constraint firstAttribute="trailing" secondItem="426-TN-vTv" secondAttribute="trailing" id="eOS-qv-p2K"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lOt-pH-AcY" secondAttribute="trailing" id="n3D-KT-F9d"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vqs-iJ-NM5" secondAttribute="trailing" id="nT3-2p-2Mg"/>
                 <constraint firstItem="lOt-pH-AcY" firstAttribute="top" secondItem="vqs-iJ-NM5" secondAttribute="bottom" constant="16" id="oxf-am-0KR"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="426-TN-vTv" secondAttribute="bottom" id="qwP-DQ-zab"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="426-TN-vTv" secondAttribute="bottom" constant="8" id="qwP-DQ-zab"/>
                 <constraint firstItem="lOt-pH-AcY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uWr-lX-5Ay"/>
                 <constraint firstItem="426-TN-vTv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="y9R-Ud-m9X"/>
             </constraints>
@@ -78,6 +78,7 @@
             <connections>
                 <outlet property="buttonContainer" destination="426-TN-vTv" id="Dl7-3H-LNf"/>
                 <outlet property="buttonHeight" destination="j6f-OZ-wvP" id="Vyt-tD-Zaw"/>
+                <outlet property="buttonTopPadding" destination="cMn-ew-Vq9" id="VRZ-oL-BwW"/>
                 <outlet property="imageView" destination="lOt-pH-AcY" id="OXg-0s-HYR"/>
                 <outlet property="leftButton" destination="hPL-O1-WZz" id="rjO-X6-k2e"/>
                 <outlet property="rightButton" destination="df4-Iu-0j1" id="Ivb-i3-GHE"/>

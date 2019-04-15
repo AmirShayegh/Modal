@@ -38,7 +38,8 @@ class CameraView: ModalView {
     private var videoDeviceInput: AVCaptureDeviceInput?
     private var permissionGranted = false
     
-    private var callBack: ((_ photo: Photo?)-> Void)?
+    private var resultCallBack: ((_ photo: Photo)-> Void)?
+    private var cancelCallBack: (()-> Void)?
     private var imageOrientation: AVCaptureVideoOrientation?
     private var deviceOrientationOnCapture: UIDeviceOrientation?
     private weak var delegate: CameraViewDelegate?
@@ -81,7 +82,7 @@ class CameraView: ModalView {
     @IBOutlet weak var cameraModeButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     
-    @IBOutlet weak var resultImageView: UIImageView!
+    @IBOutlet weak var cameraButtonsStack: UIStackView!
     
     @IBAction func changeCameraMode(_ sender: Any) {
         
@@ -121,13 +122,15 @@ class CameraView: ModalView {
         notification.notificationOccurred(.success)
         teardown()
         remove()
-        if let callback = self.callBack {
-            return callback(photo)
+        if let result = photo, let callback = self.resultCallBack {
+            return callback(result)
+        } else if let callback = self.cancelCallBack {
+            return callback()
         }
     }
     
     // MARK: Entry Point
-    func initialize(initialPosition: AVCaptureDevice.Position = .back, result: @escaping(_ photo: Photo?) -> Void) {
+    func initialize(initialPosition: AVCaptureDevice.Position = .back, result: @escaping(_ photo: Photo) -> Void, cancelled: @escaping () -> Void) {
         guard let window = UIApplication.shared.keyWindow else {return}
         let suggestedSize = getFrame(for: window.frame.size)
         setFixed(width: suggestedSize.width, height: suggestedSize.height)
@@ -135,8 +138,8 @@ class CameraView: ModalView {
         style()
         setup(for: initialPosition)
         initializeCaptureButton()
-        resultImageView.alpha = 0
-        self.callBack = result
+        self.resultCallBack = result
+        self.cancelCallBack = cancelled
 //        initLocation()
     }
     
@@ -165,8 +168,7 @@ class CameraView: ModalView {
     
     // MARK: Camera Setup
     func setup(for position: AVCaptureDevice.Position) {
-        self.resultImageView.image = nil
-        self.resultImageView.alpha = 0
+        self.cameraButtonsStack.alpha = 1
         self.previewView.alpha = 1
         checkPermission()
         DispatchQueue.main.async { [unowned self] in
@@ -483,30 +485,21 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
     
     func increaseViewHeightForAlertImageDialog() {
         guard let heightConstraint = self.contraintsAdded[.Height] else {return}
-        UIView.animate(withDuration: 0.1, animations: {
-            self.previewView.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            heightConstraint.constant = heightConstraint.constant + AlertImageDialog.buttonBarHeight
+            self.previewView.alpha = 1
+            self.cameraButtonsStack.alpha = 0
             self.layoutIfNeeded()
-        }) { (done) in
-            UIView.animate(withDuration: 0.3) {
-                heightConstraint.constant = heightConstraint.constant + AlertImageDialog.buttonBarHeight
-                self.previewView.alpha = 1
-                self.layoutIfNeeded()
-            }
         }
-        
     }
     
     func decreaseViewHeightAfterAlerImageDialog() {
         guard let heightConstraint = self.contraintsAdded[.Height] else {return}
-        UIView.animate(withDuration: 0.1, animations: {
-            self.previewView.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            heightConstraint.constant = heightConstraint.constant - AlertImageDialog.buttonBarHeight
+            self.previewView.alpha = 1
+            self.cameraButtonsStack.alpha = 1
             self.layoutIfNeeded()
-        }) { (done) in
-            UIView.animate(withDuration: 0.4) {
-                heightConstraint.constant = heightConstraint.constant - AlertImageDialog.buttonBarHeight
-                self.previewView.alpha = 1
-                self.layoutIfNeeded()
-            }
         }
 
     }
@@ -531,7 +524,6 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
     
     func prepareforPreview() {
         guard let videoPreview = videoPreviewLayer else {return}
-        resultImageView.contentMode = .scaleAspectFit
         self.captureSession.stopRunning()
         videoPreview.removeFromSuperview()
         increaseViewHeightForAlertImageDialog()

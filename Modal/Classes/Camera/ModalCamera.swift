@@ -39,10 +39,10 @@ public class ModalCamera {
         return nil
     }
     
-    public static func show(result: @escaping(_ photo: Photo?) -> Void) {
+    public static func show(result: @escaping(_ photo: Photo) -> Void, cancelled: @escaping() -> Void) {
         guard let bundle = bundle else {return}
         let view: CameraView = ModalView.nib(bundle: bundle)
-        view.initialize(result: result)
+        view.initialize(result: result, cancelled: cancelled)
     }
     
     public static func showPreviewDialog(with image: UIImage, in container: UIView, approved: @escaping()-> Void, rejected: @escaping()-> Void) {

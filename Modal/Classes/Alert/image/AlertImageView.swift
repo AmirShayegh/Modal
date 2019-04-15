@@ -42,7 +42,8 @@ class AlertImageView: ModalView {
     @IBOutlet weak var titleBottomPadding: NSLayoutConstraint!
     @IBOutlet weak var titleTopPadding: NSLayoutConstraint!
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
- 
+    @IBOutlet weak var buttonTopPadding: NSLayoutConstraint!
+    
     @IBAction func leftButtonAction(_ sender: UIButton) {
         self.imageView.image = nil
         remove()
@@ -86,6 +87,7 @@ class AlertImageView: ModalView {
         h += imagePreviewHeight
         h += buttonHeightConst
         h += titleBottomPadding.constant
+        h += buttonTopPadding.constant
         h += extraPadding
         return h
     }

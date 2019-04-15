@@ -25,16 +25,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func camera(_ sender: Any) {
-        ModalCamera.show { (result) in
-            if let photo: Photo = result, let image: UIImage = photo.image {
-                ModalAlert.show(title: "You picked this", image: image, yes: {
-                    ModalAlert.show(title: "Looks like", message: "You liked it")
-                }, no: {
-                    ModalAlert.show(title: "Looks like", message: "You didnt liked it")
-                })
-            } else {
-                ModalAlert.show(title: "Nothing Selected", message: "What the title said.")
+        ModalCamera.show(result: { (result) in
+            guard let image = result.image else {
+                ModalAlert.show(title: "ERROR", message: "Could not extract image result")
+                return
             }
+            ModalAlert.show(title: "You picked this", image: image, yes: {
+                ModalAlert.show(title: "Looks like", message: "You liked it")
+            }, no: {
+                ModalAlert.show(title: "Looks like", message: "You didnt liked it")
+            })
+            return
+        }) {
+            ModalAlert.show(title: "Nothing Selected", message: "What the title said.")
             return
         }
     }

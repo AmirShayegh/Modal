@@ -30,6 +30,8 @@ class CameraView: ModalView {
     private let lottieCaptureIconName = "circle"
     private let imagePreviewTag = Int.random(in: 1000..<1000000)
     // MARK: Variables
+    private var currentWindowWidth: CGFloat = 0
+    
     private var locationManager: CLLocationManager = CLLocationManager()
     
     private var captureSession: AVCaptureSession = AVCaptureSession()
@@ -51,6 +53,7 @@ class CameraView: ModalView {
     private var headingONSnap: CLHeading?
     
     private var isCapturing = false
+    private var previewing = false
     
     var flashEnabled: Bool = false
     var hasFlash: Bool = false
@@ -117,6 +120,38 @@ class CameraView: ModalView {
         sendCallback(photo: nil)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let window = UIApplication.shared.keyWindow else {return}
+        if window.frame.width != currentWindowWidth {
+            self.currentWindowWidth = window.frame.width
+            changeSizeToSuggestedSize()
+        }
+    }
+    
+    func changeSizeToSuggestedSize() {
+        if !previewing {
+            captureSession.stopRunning()
+        }
+        
+        guard let window = UIApplication.shared.keyWindow else {return}
+        let suggestedSize = getFrame(for: window.frame.size)
+        changeSizeTo(width: suggestedSize.width, height: suggestedSize.height)
+        if !previewing {
+            setup(for: cameraPosition)
+        }
+    }
+    
+    func changeSizeTo(width: CGFloat, height: CGFloat) {
+        guard let heightConstraint = self.contraintsAdded[.Height] else {return}
+        guard let widthConstraint = self.contraintsAdded[.Width] else {return}
+        UIView.animate(withDuration: 0.3) {
+            heightConstraint.constant = height
+            widthConstraint.constant = width
+            self.layoutIfNeeded()
+        }
+    }
+    
     // MARK: Result
     func sendCallback(photo: Photo?) {
         notification.notificationOccurred(.success)
@@ -132,6 +167,7 @@ class CameraView: ModalView {
     // MARK: Entry Point
     func initialize(initialPosition: AVCaptureDevice.Position = .back, result: @escaping(_ photo: Photo) -> Void, cancelled: @escaping () -> Void) {
         guard let window = UIApplication.shared.keyWindow else {return}
+        self.currentWindowWidth = window.frame.width
         let suggestedSize = getFrame(for: window.frame.size)
         setFixed(width: suggestedSize.width, height: suggestedSize.height)
         present()
@@ -153,16 +189,27 @@ class CameraView: ModalView {
         self.layoutIfNeeded()
         let addedTopBarHeight = Modal.dividerHeight + Modal.titleBarHeight
         if size.width > size.height {
-            //landscape
-            let basicHeight = size.height - displayPadding
-            let width = (basicHeight * 4) / 3
-            let addedTopBarHeight = Modal.dividerHeight + Modal.titleBarHeight
-            return CGRect(x: 0, y: 0, width: width, height: basicHeight + addedTopBarHeight)
+            var availableHeight = size.height - displayPadding
+            availableHeight -= (Modal.dividerHeight + Modal.titleBarHeight)
+            if previewing {
+                availableHeight -= AlertImageDialog.buttonBarHeight
+            }
+            let esitamtedWidth = (availableHeight * 4) / 3
+            
+            return CGRect(x: 0, y: 0, width: esitamtedWidth, height: size.height - displayPadding)
         } else {
             //portrait
             let width =  size.width - displayPadding
             let height = (width * 4) / 3
-            return CGRect(x: 0, y: 0, width: width, height: height + addedTopBarHeight)
+            var suggestedHeight = height
+            suggestedHeight += addedTopBarHeight
+            if previewing {
+                suggestedHeight += AlertImageDialog.buttonBarHeight
+            }
+            if suggestedHeight > size.height {
+                suggestedHeight = size.height
+            }
+            return CGRect(x: 0, y: 0, width: width, height: suggestedHeight)
         }
     }
     
@@ -439,6 +486,7 @@ class CameraView: ModalView {
             button.setTitle(alt, for: .normal)
         }
     }
+    
 }
 // MARK: Handle image return
 extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -485,23 +533,26 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
     
     func increaseViewHeightForAlertImageDialog() {
         guard let heightConstraint = self.contraintsAdded[.Height] else {return}
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             heightConstraint.constant = heightConstraint.constant + AlertImageDialog.buttonBarHeight
             self.previewView.alpha = 1
             self.cameraButtonsStack.alpha = 0
             self.layoutIfNeeded()
+        }) { (done) in
+            self.changeSizeToSuggestedSize()
         }
     }
     
     func decreaseViewHeightAfterAlerImageDialog() {
         guard let heightConstraint = self.contraintsAdded[.Height] else {return}
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             heightConstraint.constant = heightConstraint.constant - AlertImageDialog.buttonBarHeight
             self.previewView.alpha = 1
             self.cameraButtonsStack.alpha = 1
             self.layoutIfNeeded()
+        }) { (done) in
+            self.changeSizeToSuggestedSize()
         }
-
     }
     
     func showPreview(of avCapturePhoto: AVCapturePhoto) {
@@ -514,16 +565,17 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
             self.sendCallback(photo: photo)
             return
         }) {
+            self.previewing = false
             self.taken = nil
             self.notification.notificationOccurred(.warning)
             self.decreaseViewHeightAfterAlerImageDialog()
-            self.setup(for: .back)
             return
         }
     }
     
     func prepareforPreview() {
         guard let videoPreview = videoPreviewLayer else {return}
+        self.previewing = true
         self.captureSession.stopRunning()
         videoPreview.removeFromSuperview()
         increaseViewHeightForAlertImageDialog()

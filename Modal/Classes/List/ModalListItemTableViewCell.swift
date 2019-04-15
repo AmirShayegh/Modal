@@ -33,8 +33,8 @@ class ModalListItemTableViewCell: UITableViewCell {
     }
     
     func style() {
-        optionLabel.font = ModalList.optionFont
-        optionLabel.textColor = ModalList.optionColor
+        optionLabel.font = Modal.style.list.optionFont
+        optionLabel.textColor = Modal.style.list.optionColor
     }
     
 }

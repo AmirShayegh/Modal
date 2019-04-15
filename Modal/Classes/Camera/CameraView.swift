@@ -187,10 +187,10 @@ class CameraView: ModalView {
     // MARK: Sizing
     func getFrame(for size: CGSize) -> CGRect {
         self.layoutIfNeeded()
-        let addedTopBarHeight = Modal.dividerHeight + Modal.titleBarHeight
+        let addedTopBarHeight = Modal.style.shared.dividerHeight + Modal.style.shared.titleBarHeight
         if size.width > size.height {
             var availableHeight = size.height - displayPadding
-            availableHeight -= (Modal.dividerHeight + Modal.titleBarHeight)
+            availableHeight -= (Modal.style.shared.dividerHeight + Modal.style.shared.titleBarHeight)
             if previewing {
                 availableHeight -= AlertImageDialog.buttonBarHeight
             }
@@ -402,11 +402,11 @@ class CameraView: ModalView {
         self.layer.cornerRadius = 5
         self.cancelButton.setTitle("", for: .normal)
         setIcons()
-        divider.backgroundColor = Modal.dividerColor
-        self.titleBarHeight.constant = Modal.titleBarHeight
-        self.closeButtonHeight.constant = calc(percent: 70, of:  Modal.titleBarHeight)
-        self.dividerHeight.constant = Modal.dividerHeight
-        addButtomShadow(to: divider, color: Modal.dividerColor.cgColor, opacity: 0.9)
+        divider.backgroundColor = Modal.style.shared.dividerColor
+        self.titleBarHeight.constant = Modal.style.shared.titleBarHeight
+        self.closeButtonHeight.constant = calc(percent: 70, of:  Modal.style.shared.titleBarHeight)
+        self.dividerHeight.constant = Modal.style.shared.dividerHeight
+        addButtomShadow(to: divider, color: Modal.style.shared.dividerColor.cgColor, opacity: 0.9)
         addLottieCaptureIcon()
     }
     
@@ -449,8 +449,8 @@ class CameraView: ModalView {
     }
     
     func setIcons() {
-        setIcon(for: cancelButton, iconName: "close", tint: Modal.closeButtonColor, alt: "Close")
-        setIcon(for: cameraPositionButton, iconName: "camera-flip", tint: Modal.secondaryColor, alt: "Flip")
+        setIcon(for: cancelButton, iconName: "close", tint: Modal.style.shared.closeButtonColor, alt: "Close")
+        setIcon(for: cameraPositionButton, iconName: "camera-flip", tint: Modal.style.camera.buttonColor, alt: "Flip")
         setFlashIcon()
         setCameraModeIcon()
     }
@@ -460,7 +460,7 @@ class CameraView: ModalView {
         if flashEnabled {
             iconName = "flash"
         }
-        setIcon(for: flashButton, iconName: iconName, tint: Modal.secondaryColor, alt: iconName)
+        setIcon(for: flashButton, iconName: iconName, tint: Modal.style.camera.buttonColor, alt: iconName)
     }
     
     func setCameraModeIcon() {
@@ -471,7 +471,7 @@ class CameraView: ModalView {
         case .Photo:
              iconName = "photo"
         }
-        setIcon(for: cameraModeButton, iconName: iconName, tint: Modal.secondaryColor, alt: iconName)
+        setIcon(for: cameraModeButton, iconName: iconName, tint: Modal.style.camera.buttonColor, alt: iconName)
     }
     
     func setIcon(for button: UIButton, iconName: String, tint: UIColor, alt: String) {

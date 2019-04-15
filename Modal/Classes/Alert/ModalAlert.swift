@@ -11,13 +11,6 @@ import UIKit
 
 public class ModalAlert {
     
-    public static var titleFont = UIFont.boldSystemFont(ofSize: 18)
-    public static var messageFont = UIFont.systemFont(ofSize: 16)
-    public static var buttonFont = UIFont.boldSystemFont(ofSize: 16)
-    
-    public static var primaryColor = UIColor.black
-    public static var buttonAccentColor = UIColor(hex: "#EFEFF3").withAlphaComponent(0.8)
-    
     static var bundle: Bundle? {
         let podBundle = Bundle(for: ModalAlert.self)
         
@@ -48,7 +41,7 @@ public class ModalAlert {
     public static func show(title: String, message: String, rightButtonName: String, leftButtonName: String, rightButtonAction: @escaping()-> Void, leftButtonAction: @escaping()-> Void) {
         guard let bundle = bundle else {return}
         let view: AlertView = ModalView.nib(bundle: bundle)
-        view.initialize(mode: .Custom, title: title, message: message, rightButtonCallback: rightButtonAction, leftButtonCallBack: leftButtonAction)
+        view.initialize(mode: .Custom, title: title, message: message, leftButtonName: leftButtonName, rightButtonName: rightButtonName, rightButtonCallback: rightButtonAction, leftButtonCallBack: leftButtonAction)
     }
     
     public static func show(title: String, image: UIImage, rightButtonName: String, leftButtonName: String, rightButtonCallback: @escaping()-> Void, leftButtonCallBack: @escaping()-> Void) {

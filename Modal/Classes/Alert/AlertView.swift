@@ -23,9 +23,9 @@ class AlertView: ModalView {
     var customRightButtonName: String = ""
     var customLeftButtonName: String = ""
     
-    var titleFont = ModalAlert.titleFont
-    var messageFont = ModalAlert.messageFont
-    var buttonFont = ModalAlert.buttonFont
+    var titleFont = Modal.style.alert.titleFont
+    var messageFont = Modal.style.alert.messageFont
+    var buttonFont = Modal.style.alert.buttonFont
     
     let verticalContentPadding: CGFloat = 60
     let paddingBetweenTitleAndMessage: CGFloat = 8
@@ -118,15 +118,15 @@ class AlertView: ModalView {
         guard let mode = self.mode else {return}
         addShadow(to: self.layer, opacity: 0.8, height: 2)
         self.layer.cornerRadius = 5
-        self.buttonsContainer.backgroundColor = ModalAlert.buttonAccentColor
+        self.buttonsContainer.backgroundColor = Modal.style.alert.buttonAccentColor
         self.title.font = titleFont
         self.message.font = messageFont
         if let leftLabel = leftButton.titleLabel, let rightLabel = rightButton.titleLabel {
             leftLabel.font = buttonFont
             rightLabel.font = buttonFont
         }
-        self.leftButton.setTitleColor(ModalAlert.primaryColor, for: .normal)
-        self.rightButton.setTitleColor(ModalAlert.primaryColor, for: .normal)
+        self.leftButton.setTitleColor(Modal.style.alert.buttonTitleColor, for: .normal)
+        self.rightButton.setTitleColor(Modal.style.alert.buttonTitleColor, for: .normal)
         switch mode {
         case .YesNo:
             self.leftButton.setTitle("No", for: .normal)

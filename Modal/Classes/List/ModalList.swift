@@ -10,16 +10,6 @@ import Foundation
 import UIKit
 
 public class ModalList {
-    public static var titleFont = UIFont.boldSystemFont(ofSize: 18)
-    public static var optionFont = UIFont.systemFont(ofSize: 16)
-    
-    public static var dividerColor = UIColor(hex: "#EFEFF3").withAlphaComponent(0.8)
-    public static var titleColor = UIColor.black
-    public static var optionColor = UIColor.black
-    public static var closeButtonColor = UIColor.lightGray
-    
-    public static var titleBarHeight: CGFloat = 42
-    
     static var bundle: Bundle? {
         let podBundle = Bundle(for: ModalList.self)
         

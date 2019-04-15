@@ -57,14 +57,14 @@ class AlertImageDialog: UIView {
     func style() {
         addShadow(to: self.layer, opacity: 0.8, height: 2)
         self.layer.cornerRadius = 5
-        self.buttonsContainer.backgroundColor = Modal.buttonAccentColor
+        self.buttonsContainer.backgroundColor = Modal.style.alert.buttonAccentColor
         if let retryButtonLabel = retryButton.titleLabel, let approveButtonLabel = approveButton.titleLabel {
-            retryButtonLabel.font = Modal.buttonFont
-            approveButtonLabel.font = Modal.buttonFont
+            retryButtonLabel.font = Modal.style.alert.buttonFont
+            approveButtonLabel.font = Modal.style.alert.buttonFont
         }
         
-        self.retryButton.setTitleColor(Modal.primaryTextColor, for: .normal)
-        self.approveButton.setTitleColor(Modal.primaryTextColor, for: .normal)
+        self.retryButton.setTitleColor(Modal.style.alert.buttonTitleColor, for: .normal)
+        self.approveButton.setTitleColor(Modal.style.alert.buttonTitleColor, for: .normal)
         self.retryButton.setTitle("Try Again", for: .normal)
         self.approveButton.setTitle("Looks Good!", for: .normal)
     }

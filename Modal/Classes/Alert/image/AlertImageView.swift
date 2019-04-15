@@ -16,8 +16,8 @@ class AlertImageView: ModalView {
     var customRightButtonName: String = ""
     var customLeftButtonName: String = ""
     
-    var titleFont = ModalAlert.titleFont
-    var buttonFont = ModalAlert.buttonFont
+    var titleFont = Modal.style.alert.titleFont
+    var buttonFont = Modal.style.alert.buttonFont
     
     var displayPadding: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -94,12 +94,12 @@ class AlertImageView: ModalView {
     
     func getFrame(for size: CGSize) -> CGRect {
         self.layoutIfNeeded()
-        let addedTopBarHeight = Modal.dividerHeight + Modal.titleBarHeight
+        let addedTopBarHeight = Modal.style.shared.dividerHeight + Modal.style.shared.titleBarHeight
         if size.width > size.height {
             //landscape
             let basicHeight = size.height - displayPadding
             let width = (basicHeight * 4) / 3
-            let addedTopBarHeight = Modal.dividerHeight + Modal.titleBarHeight
+            let addedTopBarHeight = Modal.style.shared.dividerHeight + Modal.style.shared.titleBarHeight
             return CGRect(x: 0, y: 0, width: width, height: basicHeight + addedTopBarHeight)
         } else {
             //portrait
@@ -117,14 +117,14 @@ class AlertImageView: ModalView {
     func style() {
         addShadow(to: self.layer, opacity: 0.8, height: 2)
         self.layer.cornerRadius = 5
-        self.buttonContainer.backgroundColor = ModalAlert.buttonAccentColor
+        self.buttonContainer.backgroundColor = Modal.style.alert.buttonAccentColor
         self.titleLabel.font = titleFont
         if let leftLabel = leftButton.titleLabel, let rightLabel = rightButton.titleLabel {
             leftLabel.font = buttonFont
             rightLabel.font = buttonFont
         }
-        self.leftButton.setTitleColor(ModalAlert.primaryColor, for: .normal)
-        self.rightButton.setTitleColor(ModalAlert.primaryColor, for: .normal)
+        self.leftButton.setTitleColor(Modal.style.alert.buttonTitleColor, for: .normal)
+        self.rightButton.setTitleColor(Modal.style.alert.buttonTitleColor, for: .normal)
     }
 
 }

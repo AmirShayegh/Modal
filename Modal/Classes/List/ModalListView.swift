@@ -57,8 +57,8 @@ class ModalListView: ModalView {
     func style() {
         addShadow(to: self.layer, opacity: 0.8, height: 2)
         self.layer.cornerRadius = 5
-        titleLabel.font = ModalList.titleFont
-        titleLabel.textColor = ModalList.titleColor
+        titleLabel.font = Modal.style.shared.titleFont
+        titleLabel.textColor = Modal.style.shared.textColor
         self.cancelButton.setTitle("", for: .normal)
         if let icon = UIImage(named: "close", in: ModalList.bundle, compatibleWith: nil) {
             self.cancelButton.setImage(icon, for: .normal)
@@ -66,13 +66,13 @@ class ModalListView: ModalView {
                 buttonImage.contentMode = .scaleAspectFit
                 cancelButton.imageEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
             }
-            cancelButton.tintColor = ModalList.closeButtonColor
+            cancelButton.tintColor = Modal.style.shared.closeButtonColor
         } else {
             self.cancelButton.setTitle("Close", for: .normal)
         }
-        divider.backgroundColor = ModalList.dividerColor
-        self.titleBarHeight.constant = ModalList.titleBarHeight
-        self.closeButtonHeight.constant = calc(percent: 70, of:  ModalList.titleBarHeight)
+        divider.backgroundColor = Modal.style.shared.dividerColor
+        self.titleBarHeight.constant = Modal.style.shared.titleBarHeight
+        self.closeButtonHeight.constant = calc(percent: 70, of:  Modal.style.shared.titleBarHeight)
     }
 }
 extension ModalListView: UITableViewDelegate, UITableViewDataSource {

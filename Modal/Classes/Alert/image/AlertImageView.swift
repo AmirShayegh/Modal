@@ -44,6 +44,7 @@ class AlertImageView: ModalView {
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
  
     @IBAction func leftButtonAction(_ sender: UIButton) {
+        self.imageView.image = nil
         remove()
         if let leftCallback = self.leftButtonCallBack {
             return leftCallback()
@@ -51,6 +52,7 @@ class AlertImageView: ModalView {
     }
     
     @IBAction func rightButtonAction(_ sender: UIButton) {
+        self.imageView.image = nil
         remove()
         if let rightCallback = self.rightButtonCallback {
             return rightCallback()

@@ -45,11 +45,10 @@ public class ModalCamera {
         view.initialize(result: result)
     }
     
-    public static func showPreviewDialog(with image: UIImage,in container: UIView, approved: @escaping()-> Void, rejected: @escaping()-> Void) {
+    public static func showPreviewDialog(with image: UIImage, in container: UIView, approved: @escaping()-> Void, rejected: @escaping()-> Void) {
         guard let bundle = alertImageDialogBundle else {return}
         let view: AlertImageDialog = AlertImageDialog.fromNib(bundle: bundle)
         view.initialize(with: image, in: container) { (approve) in
-            view.removeFromSuperview()
             if approve {
                 return approved()
             } else {

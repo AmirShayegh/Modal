@@ -64,7 +64,7 @@ class CameraView: ModalView {
         }
     }
     
-    var taken: AVCapturePhoto?
+    weak var taken: AVCapturePhoto?
     
     // MARK: Outlets
     @IBOutlet weak var previewView: UIView!
@@ -113,16 +113,11 @@ class CameraView: ModalView {
     }
     
     @IBAction func closeAction(_ sender: UIButton) {
-        notification.notificationOccurred(.error)
-        teardown()
-        remove()
-        if let callback = callBack {
-            return callback(nil)
-        }
+        sendCallback(photo: nil)
     }
     
     // MARK: Result
-    func sendCallback(with photo: Photo) {
+    func sendCallback(photo: Photo?) {
         notification.notificationOccurred(.success)
         teardown()
         remove()
@@ -446,7 +441,6 @@ class CameraView: ModalView {
 // MARK: Handle image return
 extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        print("taken")
         self.taken = photo
         showPreview(of: photo)
         self.isCapturing = false
@@ -518,14 +512,20 @@ extension CameraView: AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSam
     }
     
     func showPreview(of avCapturePhoto: AVCapturePhoto) {
-        guard let photo = convert(photo: avCapturePhoto), let image = photo.image else {return}
+        guard let photo: Photo = convert(photo: avCapturePhoto), let image: UIImage = photo.image else {
+            print("Couldnt not get photo from AVCapturePhoto")
+            return
+        }
         prepareforPreview()
         ModalCamera.showPreviewDialog(with: image, in: previewView, approved: {
-            self.sendCallback(with: photo)
+            self.sendCallback(photo: photo)
+            return
         }) {
+            self.taken = nil
             self.notification.notificationOccurred(.warning)
             self.decreaseViewHeightAfterAlerImageDialog()
             self.setup(for: .back)
+            return
         }
     }
     

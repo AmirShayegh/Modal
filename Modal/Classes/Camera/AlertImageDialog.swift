@@ -18,15 +18,19 @@ class AlertImageDialog: UIView {
     @IBOutlet weak var buttonsContainer: UIView!
     
     @IBAction func retryAction(_ sender: Any) {
-        if let completion = self.completion {
-            return completion(false)
-        }
+        sendCallback(accepted: false)
     }
     
     @IBAction func approveAction(_ sender: Any) {
+        sendCallback(accepted: true)
+    }
+    
+    func sendCallback(accepted: Bool) {
+        self.imageView.image = nil
         if let completion = self.completion {
-            return completion(true)
+            completion(accepted)
         }
+        self.removeFromSuperview()
     }
     
     func initialize(with image: UIImage, in container: UIView, completion: @escaping (_ accepted: Bool) -> Void) {

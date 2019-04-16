@@ -469,4 +469,20 @@ open class ModalView: UIView {
         view.layer.shadowOffset = CGSize(width: 0, height: height)
         view.layer.shadowPath = shadowPath.cgPath
     }
+    
+    open func changeSizeTo(width: CGFloat? = nil, height: CGFloat? = nil) {
+        guard let heightConstraint = self.contraintsAdded[.Height] else {return}
+        guard let widthConstraint = self.contraintsAdded[.Width] else {return}
+        
+        UIView.animate(withDuration: 0.3) {
+            if let h = height {
+                 heightConstraint.constant = h
+            }
+            if let w = width {
+                widthConstraint.constant = w
+            }
+            
+            self.layoutIfNeeded()
+        }
+    }
 }

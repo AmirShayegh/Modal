@@ -142,16 +142,6 @@ class CameraView: ModalView {
         }
     }
     
-    func changeSizeTo(width: CGFloat, height: CGFloat) {
-        guard let heightConstraint = self.contraintsAdded[.Height] else {return}
-        guard let widthConstraint = self.contraintsAdded[.Width] else {return}
-        UIView.animate(withDuration: 0.3) {
-            heightConstraint.constant = height
-            widthConstraint.constant = width
-            self.layoutIfNeeded()
-        }
-    }
-    
     // MARK: Result
     func sendCallback(photo: Photo?) {
         notification.notificationOccurred(.success)

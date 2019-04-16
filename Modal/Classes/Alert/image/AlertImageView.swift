@@ -60,6 +60,14 @@ class AlertImageView: ModalView {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let window = UIApplication.shared.keyWindow else {return}
+        if self.frame.height > window.frame.height {
+            changeSizeTo(height: window.frame.height)
+        }
+    }
+    
     // MARK: Initialization
     func initialize(title: String, image: UIImage, leftButtonName: String = "No", rightButtonName: String = "Yes",rightButtonCallback: @escaping()-> Void, leftButtonCallBack: @escaping()-> Void) {
         setFixed(width: width, height: estimateHeightWith(title: title, image: image))
@@ -80,6 +88,7 @@ class AlertImageView: ModalView {
     }
     
     private func estimateHeightWith(title: String, image: UIImage) -> CGFloat {
+        guard let window = UIApplication.shared.keyWindow else {return 250}
         let extraPadding: CGFloat = 32
         var h: CGFloat = 0
         h = title.height(withConstrainedWidth: width, font: titleFont)
@@ -89,6 +98,9 @@ class AlertImageView: ModalView {
         h += titleBottomPadding.constant
         h += buttonTopPadding.constant
         h += extraPadding
+        if h > window.frame.height {
+            return window.frame.height
+        }
         return h
     }
     

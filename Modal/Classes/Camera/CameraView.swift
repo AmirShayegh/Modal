@@ -29,7 +29,11 @@ class CameraView: ModalView {
     private let lottieCaptureIconTag = Int.random(in: 1000..<1000000)
     private let lottieCaptureIconName = "circle"
     private let imagePreviewTag = Int.random(in: 1000..<1000000)
+    
+    private let lottieFocusIconTag = Int.random(in: 1000..<1000000)
+    private let lottieFocusIconName = "focus"
     // MARK: Variables
+    private var focusGesture: UITapGestureRecognizer?
     private var currentWindowWidth: CGFloat = 0
     
     private var locationManager: CLLocationManager = CLLocationManager()
@@ -46,7 +50,6 @@ class CameraView: ModalView {
     private var deviceOrientationOnCapture: UIDeviceOrientation?
     private weak var delegate: CameraViewDelegate?
     private var videoPreviewLayer: PreviewView?
-    private var picPreview: UIView?
     private var currentLocation: CLLocation?
     private var currentHeading: CLHeading?
     private var locationONSnap: CLLocation?
@@ -166,7 +169,7 @@ class CameraView: ModalView {
         initializeCaptureButton()
         self.resultCallBack = result
         self.cancelCallBack = cancelled
-//        initLocation()
+        //        initLocation()
     }
     
     func initializeCaptureButton() {
@@ -215,6 +218,7 @@ class CameraView: ModalView {
             self.setPreviewView()
             self.captureSession.commitConfiguration()
             self.captureSession.startRunning()
+            self.enableTapTofocus()
         }
     }
     
@@ -222,10 +226,79 @@ class CameraView: ModalView {
         locationManager.stopUpdatingLocation()
         notification.notificationOccurred(.error)
         captureSession.stopRunning()
-        if let preview = self.picPreview {
+        if let preview = self.previewView {
             preview.removeFromSuperview()
         }
     }
+    
+    func enableTapTofocus() {
+        guard let previewLayer = self.previewView else { return }
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapToFocus))
+        self.focusGesture = gesture
+        previewLayer.addGestureRecognizer(gesture)
+    }
+    
+    func disableTapToFocus() {
+        guard let previewLayer = self.previewView, let gesture = self.focusGesture else { return }
+        previewLayer.removeGestureRecognizer(gesture)
+    }
+    
+    // In your camera preview view
+    @objc private func tapToFocus(with gestureRecognizer: UITapGestureRecognizer) {
+        guard let previewLayer = self.previewView, let videoLayer = self.videoPreviewLayer else { return }
+        let location = gestureRecognizer.location(in: previewLayer)
+        addLottieFocusIcon(at: location)
+        
+        let captureDeviceLocation = videoLayer.videoPreviewLayer.captureDevicePointConverted(fromLayerPoint: location)
+
+        focus(at: captureDeviceLocation)
+    }
+    
+    // In your camera controller
+    func focus(at point: CGPoint) {
+        guard let inputDevice = self.videoDeviceInput else {return}
+        let device = inputDevice.device
+        
+        guard device.isFocusPointOfInterestSupported, device.isExposurePointOfInterestSupported else {
+            return
+        }
+        
+        do {
+            try device.lockForConfiguration()
+            
+            device.focusPointOfInterest = point
+            device.exposurePointOfInterest = point
+            
+            device.focusMode = .continuousAutoFocus
+            device.exposureMode = .continuousAutoExposure
+            
+            device.unlockForConfiguration()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func addLottieFocusIcon(at point: CGPoint) {
+        guard let previewLayer = self.previewView else { return }
+        let animationView = AnimationView()
+        guard let bundle = Modal.bundle, let animation: Animation = Animation.named(lottieFocusIconName, bundle: bundle) else {
+            return
+        }
+        
+        animationView.animation = animation
+        animationView.tag = self.lottieFocusIconTag
+        
+        // Position Icon
+        animationView.frame = CGRect(x: (point.x - 50), y: (point.y - 50), width: 100, height: 100)
+        animationView.center = CGPoint(x: point.x, y: point.y)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
+        previewLayer.addSubview(animationView)
+        animationView.play { (done) in
+            animationView.removeFromSuperview()
+        }
+    }
+    
     // MARK: AVSession configuration
     /******************** INPUT CAMERA SETUP ********************/
     private func checkPermission() {
@@ -304,7 +377,7 @@ class CameraView: ModalView {
         if let previewLayer = self.videoPreviewLayer {
             previewLayer.removeFromSuperview()
         }
-         self.layoutIfNeeded()
+        self.layoutIfNeeded()
         let preview: PreviewView = UIView.fromNib(bundle: ModalCamera.bundle)
         preview.videoPreviewLayer.session = self.captureSession
         preview.position(in: previewView, behind: captureButtonContainer)
@@ -364,7 +437,7 @@ class CameraView: ModalView {
         let settings = setPhotoSettings()
         self.deviceOrientationOnCapture = UIDevice.current.orientation
         self.photoOutput.capturePhoto(with: settings, delegate: self)
-
+        
     }
     
     func setPhotoSettings() -> AVCapturePhotoSettings {
@@ -457,9 +530,9 @@ class CameraView: ModalView {
         var iconName = "photo"
         switch cameraMode {
         case .Video:
-             iconName = "video" 
+            iconName = "video"
         case .Photo:
-             iconName = "photo"
+            iconName = "photo"
         }
         setIcon(for: cameraModeButton, iconName: iconName, tint: Modal.style.camera.buttonColor, alt: iconName)
     }
